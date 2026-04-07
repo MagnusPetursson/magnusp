@@ -1,84 +1,113 @@
-/* Brand palette: black, orange, brown with warm neutrals */
+/* ==========================================================================
+   FabLab Ísland Brand System
+   Typography: Roboto Condensed (headlines), Roboto (body), Roboto Slab (special)
+   Colors: Red #E03A3F | Green #009967 | Blue #1245DE
+           Pink #E099AB | Orange #FFA13D | Yellow #F2C200
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto+Slab:wght@300;400;700&display=swap');
+
 :root {
-  --brand-black: #0f0d0b;
-  --brand-charcoal: #1b1714;
-  --brand-brown: #3f2a1d;
-  --brand-brown-soft: #5f4230;
-  --brand-orange: #e77a1e;
-  --brand-orange-soft: #ffb066;
-  --brand-cream: #f8f2ea;
-  --brand-warm-gray: #d9cec2;
+  --fab-red: #E03A3F;
+  --fab-green: #009967;
+  --fab-blue: #1245DE;
+  --fab-pink: #E099AB;
+  --fab-orange: #FFA13D;
+  --fab-yellow: #F2C200;
+  --fab-white: #FFFFFF;
+  --fab-gray: #E4E4E4;
+  --fab-black: #000000;
 }
 
-/* Light mode */
+/* ---------- Light mode ---------- */
 [data-md-color-scheme="default"] {
-  --md-default-bg-color: #f8f2ea;
-  --md-default-fg-color: #2b2019;
-  --md-default-fg-color--light: #59483d;
-  --md-default-fg-color--lighter: #7a685a;
+  --md-default-bg-color: #FAFAFA;
+  --md-default-fg-color: #1A1A1A;
+  --md-default-fg-color--light: #444444;
+  --md-default-fg-color--lighter: #717171;
 
-  --md-primary-fg-color: #1b1714;
-  --md-primary-fg-color--light: #2a231f;
-  --md-primary-fg-color--dark: #0f0d0b;
+  --md-primary-fg-color: #000000;
+  --md-primary-fg-color--light: #1a1a1a;
+  --md-primary-fg-color--dark: #000000;
+  --md-primary-bg-color: #FFFFFF;
 
-  --md-accent-fg-color: #e77a1e;
-  --md-accent-fg-color--transparent: rgba(231, 122, 30, 0.14);
+  --md-accent-fg-color: #1245DE;
+  --md-accent-fg-color--transparent: rgba(18, 69, 222, 0.12);
 
-  --md-code-fg-color: #2b2019;
-  --md-code-bg-color: #efe4d8;
+  --md-code-fg-color: #1A1A1A;
+  --md-code-bg-color: #F0F0F0;
 
-  --md-typeset-a-color: #8c3f0e;
+  --md-typeset-a-color: #1245DE;
 }
 
-/* Dark mode */
+/* ---------- Dark mode ---------- */
 [data-md-color-scheme="slate"] {
-  --md-default-bg-color: #14110f;
-  --md-default-fg-color: #f0e7dd;
-  --md-default-fg-color--light: #d4c1af;
-  --md-default-fg-color--lighter: #ab9380;
+  --md-default-bg-color: #0E0E0E;
+  --md-default-fg-color: #E8E8E8;
+  --md-default-fg-color--light: #BBBBBB;
+  --md-default-fg-color--lighter: #888888;
 
-  --md-primary-fg-color: #211810;
-  --md-primary-fg-color--light: #3f2a1d;
-  --md-primary-fg-color--dark: #140f0b;
+  --md-primary-fg-color: #111111;
+  --md-primary-fg-color--light: #1a1a1a;
+  --md-primary-fg-color--dark: #080808;
+  --md-primary-bg-color: #E8E8E8;
 
-  --md-accent-fg-color: #ff9e3a;
-  --md-accent-fg-color--transparent: rgba(255, 158, 58, 0.2);
+  --md-accent-fg-color: #4D7AFF;
+  --md-accent-fg-color--transparent: rgba(77, 122, 255, 0.18);
 
-  --md-code-fg-color: #ffd9b0;
-  --md-code-bg-color: #22170f;
+  --md-code-fg-color: #D4D4D4;
+  --md-code-bg-color: #1A1A1A;
 
-  --md-typeset-a-color: #ffb066;
+  --md-typeset-a-color: #4D7AFF;
 }
 
-/* Warm layered page background */
+/* ==========================================================================
+   Page background — subtle geometric energy
+   ========================================================================== */
+
 .md-main {
   background:
-    radial-gradient(circle at 10% -10%, rgba(231, 122, 30, 0.18), transparent 35%),
-    radial-gradient(circle at 90% 0%, rgba(95, 66, 48, 0.22), transparent 45%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.05), transparent 200px);
+    radial-gradient(ellipse at 0% 0%, rgba(18, 69, 222, 0.06), transparent 40%),
+    radial-gradient(ellipse at 100% 20%, rgba(224, 58, 63, 0.05), transparent 40%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 153, 103, 0.04), transparent 50%);
 }
 
+[data-md-color-scheme="slate"] .md-main {
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(18, 69, 222, 0.08), transparent 40%),
+    radial-gradient(ellipse at 100% 20%, rgba(224, 58, 63, 0.06), transparent 40%),
+    radial-gradient(ellipse at 50% 100%, rgba(0, 153, 103, 0.05), transparent 50%);
+}
+
+/* ==========================================================================
+   Content area
+   ========================================================================== */
+
 .md-content__inner {
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-  background: color-mix(in srgb, var(--md-default-bg-color) 92%, #ffffff 8%);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  border-radius: 2px;
+  padding: 1.5rem 1.75rem;
+  background: var(--md-default-bg-color);
+  border-top: 3px solid var(--fab-blue);
 }
 
 [data-md-color-scheme="slate"] .md-content__inner {
-  background: color-mix(in srgb, var(--md-default-bg-color) 90%, #2c1f17 10%);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+  background: color-mix(in srgb, var(--md-default-bg-color) 94%, #111 6%);
+  border-top-color: var(--fab-blue);
 }
 
-/* Header and nav */
+/* ==========================================================================
+   Header + navigation — black, bold, industrial
+   ========================================================================== */
+
 .md-header,
 .md-tabs {
-  background: linear-gradient(90deg, #151210, #2a1c13 65%, #3f2a1d);
+  background: #000000;
+  border-bottom: none;
 }
 
 [data-md-color-scheme="default"] .md-header,
 [data-md-color-scheme="default"] .md-tabs {
-  background: linear-gradient(90deg, #2a1a10, #4b2a17 60%, #6a3a1f);
+  background: #000000;
 }
 
 [data-md-color-scheme="default"] .md-header,
@@ -86,99 +115,373 @@
 [data-md-color-scheme="default"] .md-header__topic,
 [data-md-color-scheme="default"] .md-header__button,
 [data-md-color-scheme="default"] .md-tabs__link {
-  color: #fff4e7;
+  color: #FFFFFF;
 }
 
 [data-md-color-scheme="default"] .md-search__input {
-  background-color: rgba(255, 244, 231, 0.15);
-  color: #fff4e7;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
 }
 
 [data-md-color-scheme="default"] .md-search__icon,
 [data-md-color-scheme="default"] .md-search-result__meta {
-  color: #fff4e7;
+  color: #FFFFFF;
 }
 
 [data-md-color-scheme="default"] .md-search__input::placeholder {
-  color: rgba(255, 244, 231, 0.82);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .md-header__title {
-  letter-spacing: 0.02em;
+  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
   font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
 }
 
+/* Active nav + hover — red accent for energy */
 .md-nav__item .md-nav__link--active,
-.md-nav__item .md-nav__link:hover,
+.md-nav__item .md-nav__link:hover {
+  color: var(--fab-red);
+}
+
 .md-tabs__link--active,
 .md-tabs__link:hover {
-  color: var(--md-accent-fg-color);
+  color: var(--fab-red);
 }
 
-/* Typography */
+/* ==========================================================================
+   Typography — Roboto Condensed headlines, Roboto body, Roboto Slab details
+   Per the brand manual: Condensed for headlines, Classic for body, Slab for
+   footers/descriptions/numbers.
+   ========================================================================== */
+
+.md-typeset {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .md-typeset h1,
 .md-typeset h2,
-.md-typeset h3 {
-  letter-spacing: 0.01em;
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
   font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 .md-typeset h1 {
-  border-bottom: 2px solid color-mix(in srgb, var(--md-accent-fg-color) 45%, transparent);
-  padding-bottom: 0.4rem;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  border-bottom: none;
+  padding-bottom: 0.5rem;
+  position: relative;
+  margin-bottom: 1.2rem;
 }
 
-/* Links and buttons */
-.md-typeset a {
-  text-decoration-thickness: 2px;
-  text-underline-offset: 2px;
+/* Colored underline — cycles through brand colors via nth-child */
+.md-typeset h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--fab-red);
 }
+
+.md-typeset h2 {
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid var(--fab-gray);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h2 {
+  border-bottom-color: #2a2a2a;
+}
+
+.md-typeset h3 {
+  font-size: 1.2rem;
+  line-height: 1.3;
+  color: var(--md-default-fg-color--light);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* ==========================================================================
+   Links — Blue underline, red on hover
+   ========================================================================== */
+
+.md-typeset a {
+  color: var(--md-typeset-a-color);
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+.md-typeset a:hover {
+  color: var(--fab-red);
+  border-bottom-color: var(--fab-red);
+}
+
+/* ==========================================================================
+   Buttons — bold, geometric, decisive
+   ========================================================================== */
 
 .md-typeset .md-button {
-  border-radius: 10px;
-  font-weight: 600;
+  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
   border-width: 2px;
-  transition: transform 140ms ease, box-shadow 180ms ease;
+  padding: 0.65em 1.6em;
+  transition: all 120ms ease;
 }
 
 .md-typeset .md-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .md-typeset .md-button--primary {
-  background: linear-gradient(135deg, #e77a1e, #cf5f0a);
-  border-color: #cf5f0a;
-  color: #fff;
+  background: var(--fab-red);
+  border-color: var(--fab-red);
+  color: #FFFFFF;
 }
 
-/* Code blocks */
+.md-typeset .md-button--primary:hover {
+  background: #c42e33;
+  border-color: #c42e33;
+  color: #FFFFFF;
+}
+
+.md-typeset .md-button:not(.md-button--primary) {
+  border-color: var(--md-default-fg-color);
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .md-button:not(.md-button--primary):hover {
+  background: var(--md-default-fg-color);
+  color: var(--md-default-bg-color);
+}
+
+/* ==========================================================================
+   Code blocks — clean, technical
+   ========================================================================== */
+
+.md-typeset code {
+  font-family: 'Roboto Mono', monospace;
+  border-radius: 2px;
+  font-size: 0.85em;
+}
+
 .md-typeset pre > code {
-  border: 1px solid color-mix(in srgb, var(--md-accent-fg-color) 30%, transparent);
-  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 12%, transparent);
+  border-radius: 2px;
+  border-left: 3px solid var(--fab-green);
 }
 
-/* Tables and blockquotes */
+/* ==========================================================================
+   Blockquotes — green accent (maker/growth)
+   ========================================================================== */
+
+.md-typeset blockquote {
+  border-left: 4px solid var(--fab-green);
+  background: color-mix(in srgb, var(--fab-green) 6%, transparent);
+  border-radius: 0 2px 2px 0;
+  padding: 0.8rem 1.2rem;
+  font-style: italic;
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+  background: color-mix(in srgb, var(--fab-green) 8%, transparent);
+}
+
+/* ==========================================================================
+   Tables — structured, precise
+   ========================================================================== */
+
 .md-typeset table:not([class]) {
-  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 16%, transparent);
-  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 14%, transparent);
+  border-radius: 2px;
   overflow: hidden;
 }
 
-.md-typeset blockquote {
-  border-left: 4px solid var(--md-accent-fg-color);
-  background: color-mix(in srgb, var(--md-accent-fg-color) 10%, transparent);
-  border-radius: 0 8px 8px 0;
+.md-typeset table:not([class]) th {
+  font-family: 'Roboto Condensed', 'Roboto', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  background: color-mix(in srgb, var(--fab-blue) 8%, transparent);
 }
 
-/* Slightly tighter mobile spacing while preserving readability */
+/* ==========================================================================
+   Horizontal rules — multi-color brand dash
+   ========================================================================== */
+
+.md-typeset hr {
+  border: none;
+  height: 3px;
+  background: linear-gradient(90deg,
+    var(--fab-red) 0%,
+    var(--fab-red) 20%,
+    var(--fab-blue) 20%,
+    var(--fab-blue) 40%,
+    var(--fab-green) 40%,
+    var(--fab-green) 60%,
+    var(--fab-yellow) 60%,
+    var(--fab-yellow) 80%,
+    var(--fab-orange) 80%,
+    var(--fab-orange) 100%
+  );
+  margin: 2rem 0;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   Lists — sharper bullets
+   ========================================================================== */
+
+.md-typeset ul > li::before {
+  color: var(--fab-blue);
+}
+
+/* Unordered list marker color */
+.md-typeset ul:not(.md-nav__list) > li {
+  list-style: none;
+  position: relative;
+  padding-left: 1.2em;
+}
+
+.md-typeset ul:not(.md-nav__list) > li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--fab-red);
+  font-weight: 700;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* ==========================================================================
+   Footer — Roboto Slab per brand guidelines
+   ========================================================================== */
+
+.md-footer {
+  background: #000000;
+}
+
+.md-footer-meta {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  font-size: 0.82rem;
+}
+
+.md-copyright {
+  font-family: 'Roboto Slab', serif;
+}
+
+/* ==========================================================================
+   Sidebar navigation refinements
+   ========================================================================== */
+
+.md-nav__link {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 0.82rem;
+  transition: color 120ms ease;
+}
+
+.md-nav__item--active > .md-nav__link {
+  font-weight: 700;
+  color: var(--fab-blue);
+}
+
+[data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link {
+  color: #4D7AFF;
+}
+
+/* Section labels in sidebar */
+.md-nav--primary .md-nav__title {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   Strong / bold text — slight color lift
+   ========================================================================== */
+
+.md-typeset strong {
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+
+/* ==========================================================================
+   Scrollbar — subtle brand accent
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--fab-blue) 40%, #888);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fab-blue);
+}
+
+/* ==========================================================================
+   Selection highlight — brand red
+   ========================================================================== */
+
+::selection {
+  background: rgba(224, 58, 63, 0.2);
+  color: inherit;
+}
+
+[data-md-color-scheme="slate"] ::selection {
+  background: rgba(224, 58, 63, 0.3);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
 @media (max-width: 768px) {
   .md-content__inner {
-    padding: 1rem;
-    border-radius: 12px;
+    padding: 1rem 1.1rem;
   }
 
   .md-typeset h1 {
     font-size: 1.8rem;
+  }
+
+  .md-typeset h2 {
+    font-size: 1.3rem;
   }
 }

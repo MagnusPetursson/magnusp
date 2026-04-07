@@ -266,14 +266,14 @@ features = [
 [[project.theme.palette]]
 scheme = "default"
 primary = "black"
-accent = "orange"
+accent = "blue"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
 
 [[project.theme.palette]]
 scheme = "slate"
-primary = "brown"
-accent = "orange"
+primary = "black"
+accent = "blue"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
 
@@ -284,8 +284,8 @@ toggle.name = "Switch to light mode"
 # a monospaced font used in code blocks.
 # ----------------------------------------------------------------------------
 [project.theme.font]
-text = "Space Grotesk"
-code = "Fira Code"
+text = "Roboto"
+code = "Roboto Mono"
 
 # ----------------------------------------------------------------------------
 # You can configure your own logo to be shown in the header using the "logo"
