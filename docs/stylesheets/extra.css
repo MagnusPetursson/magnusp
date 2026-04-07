@@ -1,0 +1,184 @@
+/* Brand palette: black, orange, brown with warm neutrals */
+:root {
+  --brand-black: #0f0d0b;
+  --brand-charcoal: #1b1714;
+  --brand-brown: #3f2a1d;
+  --brand-brown-soft: #5f4230;
+  --brand-orange: #e77a1e;
+  --brand-orange-soft: #ffb066;
+  --brand-cream: #f8f2ea;
+  --brand-warm-gray: #d9cec2;
+}
+
+/* Light mode */
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f8f2ea;
+  --md-default-fg-color: #2b2019;
+  --md-default-fg-color--light: #59483d;
+  --md-default-fg-color--lighter: #7a685a;
+
+  --md-primary-fg-color: #1b1714;
+  --md-primary-fg-color--light: #2a231f;
+  --md-primary-fg-color--dark: #0f0d0b;
+
+  --md-accent-fg-color: #e77a1e;
+  --md-accent-fg-color--transparent: rgba(231, 122, 30, 0.14);
+
+  --md-code-fg-color: #2b2019;
+  --md-code-bg-color: #efe4d8;
+
+  --md-typeset-a-color: #8c3f0e;
+}
+
+/* Dark mode */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #14110f;
+  --md-default-fg-color: #f0e7dd;
+  --md-default-fg-color--light: #d4c1af;
+  --md-default-fg-color--lighter: #ab9380;
+
+  --md-primary-fg-color: #211810;
+  --md-primary-fg-color--light: #3f2a1d;
+  --md-primary-fg-color--dark: #140f0b;
+
+  --md-accent-fg-color: #ff9e3a;
+  --md-accent-fg-color--transparent: rgba(255, 158, 58, 0.2);
+
+  --md-code-fg-color: #ffd9b0;
+  --md-code-bg-color: #22170f;
+
+  --md-typeset-a-color: #ffb066;
+}
+
+/* Warm layered page background */
+.md-main {
+  background:
+    radial-gradient(circle at 10% -10%, rgba(231, 122, 30, 0.18), transparent 35%),
+    radial-gradient(circle at 90% 0%, rgba(95, 66, 48, 0.22), transparent 45%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.05), transparent 200px);
+}
+
+.md-content__inner {
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  background: color-mix(in srgb, var(--md-default-bg-color) 92%, #ffffff 8%);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-content__inner {
+  background: color-mix(in srgb, var(--md-default-bg-color) 90%, #2c1f17 10%);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+/* Header and nav */
+.md-header,
+.md-tabs {
+  background: linear-gradient(90deg, #151210, #2a1c13 65%, #3f2a1d);
+}
+
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background: linear-gradient(90deg, #2a1a10, #4b2a17 60%, #6a3a1f);
+}
+
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-header__title,
+[data-md-color-scheme="default"] .md-header__topic,
+[data-md-color-scheme="default"] .md-header__button,
+[data-md-color-scheme="default"] .md-tabs__link {
+  color: #fff4e7;
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+  background-color: rgba(255, 244, 231, 0.15);
+  color: #fff4e7;
+}
+
+[data-md-color-scheme="default"] .md-search__icon,
+[data-md-color-scheme="default"] .md-search-result__meta {
+  color: #fff4e7;
+}
+
+[data-md-color-scheme="default"] .md-search__input::placeholder {
+  color: rgba(255, 244, 231, 0.82);
+}
+
+.md-header__title {
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+.md-nav__item .md-nav__link--active,
+.md-nav__item .md-nav__link:hover,
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* Typography */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+
+.md-typeset h1 {
+  border-bottom: 2px solid color-mix(in srgb, var(--md-accent-fg-color) 45%, transparent);
+  padding-bottom: 0.4rem;
+}
+
+/* Links and buttons */
+.md-typeset a {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+.md-typeset .md-button {
+  border-radius: 10px;
+  font-weight: 600;
+  border-width: 2px;
+  transition: transform 140ms ease, box-shadow 180ms ease;
+}
+
+.md-typeset .md-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+
+.md-typeset .md-button--primary {
+  background: linear-gradient(135deg, #e77a1e, #cf5f0a);
+  border-color: #cf5f0a;
+  color: #fff;
+}
+
+/* Code blocks */
+.md-typeset pre > code {
+  border: 1px solid color-mix(in srgb, var(--md-accent-fg-color) 30%, transparent);
+  border-radius: 10px;
+}
+
+/* Tables and blockquotes */
+.md-typeset table:not([class]) {
+  border: 1px solid color-mix(in srgb, var(--md-default-fg-color) 16%, transparent);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-accent-fg-color);
+  background: color-mix(in srgb, var(--md-accent-fg-color) 10%, transparent);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Slightly tighter mobile spacing while preserving readability */
+@media (max-width: 768px) {
+  .md-content__inner {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .md-typeset h1 {
+    font-size: 1.8rem;
+  }
+}
