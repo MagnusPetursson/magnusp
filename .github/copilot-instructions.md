@@ -2,35 +2,39 @@
 
 ## What This Is
 
-A personal portfolio site built with [Zensical](https://zensical.org/) (a Material-for-MkDocs-based static site generator). Content lives in `docs/` as Markdown; `zensical build` compiles it to `site/`. Configuration is in `zensical.toml`.
+The personal portfolio site of Magnús Pétursson (magnusp.is), built with [Zensical](https://zensical.org/), a static site generator from the creators of Material for MkDocs. It is bilingual: English at `/` and Icelandic at `/is/`.
 
 ## Build & Dev
 
 ```bash
-# Activate the local venv first
 source .venv/bin/activate
+pip install -r requirements.txt               # Zensical version is pinned
 
-# Live preview with hot reload (http://localhost:8000)
-zensical serve
-
-# Production build (output → site/)
-zensical build --clean
+zensical serve                                # English preview, http://localhost:8000
+zensical build --clean --strict               # English  → site/
+zensical build --strict -f zensical.is.toml   # Icelandic → site/is/ (must run after English)
 ```
 
-`site/` is gitignored — it's auto-deployed to GitHub Pages via `.github/workflows/docs.yml` on push to `main`/`master`.
+`site/` is gitignored. `.github/workflows/docs.yml` builds both languages and deploys to GitHub Pages on push to `main`. Builds run with `--strict`, so fix every warning.
 
 ## Architecture
 
 ```
-docs/           # All content (edit here)
-  *.md          # Pages — one per nav item
-  stylesheets/extra.css  # Brand styles (FabLab Ísland color system)
-  images/       # Static assets
-site/           # Generated output (do not edit)
-zensical.toml   # Site config, nav, theme, features
+docs/                  # English pages + shared assets
+  *.md                 # One page per nav item
+  stylesheets/         # Shared CSS (also used by the Icelandic build)
+  images/              # Shared images
+  CNAME                # Custom domain for GitHub Pages
+docs-is/               # Icelandic pages, same file names as docs/
+zensical.toml          # English config (nav, theme, features)
+zensical.is.toml       # Icelandic config; mirror shared settings from zensical.toml
+requirements.txt       # Pinned Zensical version
 ```
 
-Navigation order is defined explicitly in `zensical.toml` under `nav`.
+- Zensical's TOML config has no inheritance, so theme, features, palette and font settings are duplicated across both config files. Change them in both.
+- The language switcher is `[[project.extra.alternate]]`, which appears in both configs.
+- The Icelandic build references CSS and images by absolute path (`/stylesheets/...`, `/images/...`) so they aren't duplicated. In `docs-is/` pages, reference images as `/images/<file>`.
+- Every English page in `docs/` has an Icelandic counterpart in `docs-is/` with the same file name. Add or rename both together, and update both `nav` lists.
 
 ## Content Conventions
 
@@ -47,20 +51,8 @@ Buttons use Material attribute syntax:
 [Label](page.md){ .md-button .md-button--primary }
 ```
 
-Collapsible FAQ blocks:
-```markdown
-??? question "Question text"
-    Answer content
-```
-
-Use `---` horizontal rules to separate content sections (renders as a brand-color gradient).
+Never invent biographical facts. Unfinished content is marked with `<!-- TODO -->` comments.
 
 ## Styling
 
-Custom styles are in `docs/stylesheets/extra.css`. Brand color variables are defined on `:root`:
-- `--brand-red: #E03A3F` — primary accent, links hover, list bullets, H1 underline
-- `--brand-green: #009967` — code block borders, blockquote accents
-- `--brand-blue: #1245DE` — links, scrollbar, button backgrounds
-- Additional: pink `#E94C8D`, orange `#F2822E`, yellow `#F2BE32`
-
-Light/dark schemes each have their own variable overrides. Edit `extra.css` for any visual changes — do not add inline styles to Markdown.
+The visual design is being redesigned; the previous FabLab Ísland brand is being retired. Custom styles live in `docs/stylesheets/extra.css`. Don't add inline styles to Markdown.

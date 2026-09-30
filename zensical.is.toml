@@ -1,33 +1,34 @@
-# English site (default language), built to site/.
-# The Icelandic site lives in zensical.is.toml and builds to site/is/.
-# Keep shared settings (theme, features, palette, fonts) in sync between both.
-# Reference: https://zensical.org/docs/
+# Icelandic site, built to site/is/ (served at https://magnusp.is/is/).
+# Build AFTER the English site: zensical build -f zensical.is.toml
+# Mirrors zensical.toml; keep shared settings (theme, features, palette,
+# fonts) in sync. Stylesheets and images are NOT duplicated: they are served
+# from the English build by absolute URL (/stylesheets/..., /images/...).
 
 [project]
 site_name = "Magnús Pétursson"
-site_description = "Portfolio of Magnús Pétursson: projects, experience, and contact."
+site_description = "Ferilskrá og verkefni Magnúsar Péturssonar."
 site_author = "Magnús Pétursson"
-site_url = "https://magnusp.is/"
+site_url = "https://magnusp.is/is/"
 repo_url = "https://github.com/MagnusPetursson/magnusp"
 repo_name = "MagnusPetursson/magnusp"
 copyright = "&copy; 2026 Magnús Pétursson"
 
-docs_dir = "docs"
-site_dir = "site"
+docs_dir = "docs-is"
+site_dir = "site/is"
 
 nav = [
-    { "Home" = "index.md" },
-    { "About" = "about.md" },
-    { "Projects" = "projects.md" },
-    { "Experience" = "experience.md" },
-    { "Skills" = "skills.md" },
-    { "Contact" = "contact.md" },
+    { "Forsíða" = "index.md" },
+    { "Um mig" = "about.md" },
+    { "Verkefni" = "projects.md" },
+    { "Reynsla" = "experience.md" },
+    { "Hæfni" = "skills.md" },
+    { "Hafa samband" = "contact.md" },
 ]
 
-extra_css = ["stylesheets/extra.css"]
+extra_css = ["/stylesheets/extra.css"]
 
 [project.theme]
-language = "en"
+language = "is"
 features = [
     "announce.dismiss",
     "content.code.copy",
@@ -49,20 +50,19 @@ scheme = "default"
 primary = "black"
 accent = "blue"
 toggle.icon = "lucide/sun"
-toggle.name = "Switch to dark mode"
+toggle.name = "Skipta í dökkt útlit"
 
 [[project.theme.palette]]
 scheme = "slate"
 primary = "black"
 accent = "blue"
 toggle.icon = "lucide/moon"
-toggle.name = "Switch to light mode"
+toggle.name = "Skipta í ljóst útlit"
 
 [project.theme.font]
 text = "Roboto"
 code = "Roboto Mono"
 
-# Language switcher (shown in the header on every page)
 [[project.extra.alternate]]
 name = "English"
 link = "/"
