@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{#- Homepage: full-width content, no sidebars. Layout is built in the page's Markdown. -#}
+{% block site_nav %}{% endblock %}
+{% block container %}
+  <div class="md-content mp-home" data-md-component="content">
+    <article class="md-content__inner md-typeset">
+      {{ page.content }}
+    </article>
+  </div>
+{% endblock %}

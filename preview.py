@@ -4,7 +4,7 @@
     python preview.py --port 9000
 
 Builds English then Icelandic into site/, serves it, and rebuilds whenever
-anything in docs/, docs-is/ or the configs changes. Open pages reload
+anything in docs/, docs-is/, overrides/ or the configs changes. Open pages reload
 themselves after each rebuild.
 """
 
@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SITE = ROOT / "site"
-WATCH = [ROOT / "docs", ROOT / "docs-is", ROOT / "zensical.toml", ROOT / "zensical.is.toml"]
+WATCH = [ROOT / "docs", ROOT / "docs-is", ROOT / "overrides", ROOT / "zensical.toml", ROOT / "zensical.is.toml"]
 BUILDS = [
     ["zensical", "build", "--clean"],
     ["zensical", "build", "-f", "zensical.is.toml"],

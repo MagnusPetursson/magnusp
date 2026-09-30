@@ -1,29 +1,15 @@
 ---
-icon: lucide/mail
+template: contact.html
+title: Contact
+description: How to reach Magnús Pétursson.
+hide:
+  - navigation
+  - toc
+  - footer
 ---
 
 # Contact
 
-## Reach Out
+Send me a message with the form below, or email <span class="mp-email" data-e="=MXauA3c152Zh1GQzVnbnFWb">magnus at this domain</span>.
 
-I am open to [full-time roles / freelance / collaborations / speaking].
-
-- **Email:** [name@example.com]
-- **GitHub:** [github.com/username](https://github.com/username)
-- **LinkedIn:** [linkedin.com/in/username](https://linkedin.com/in/username)
-- **X / Twitter (optional):** [x.com/username](https://x.com/username)
-
-## Message Template
-
-If you want to make outreach easy for visitors, keep this:
-
-```text
-Hi [Your Name],
-
-I found your portfolio and wanted to reach out about [topic].
-
-[Short context]
-
-Best,
-[Name]
-```
+I read everything and reply when I can, in English or Icelandic.

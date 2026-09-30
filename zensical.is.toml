@@ -1,16 +1,14 @@
 # Icelandic site, built to site/is/ (served at https://magnusp.is/is/).
 # Build AFTER the English site: zensical build -f zensical.is.toml
-# Mirrors zensical.toml; keep shared settings (theme, features, palette,
-# fonts) in sync. Stylesheets and images are NOT duplicated: they are served
-# from the English build by absolute URL (/stylesheets/..., /images/...).
+# Stylesheets and images are not duplicated: pages load them from the English
+# build by absolute URL (/stylesheets/..., /images/...).
+# Keep the theme, plugins and extra sections in sync with zensical.toml.
 
 [project]
 site_name = "Magnús Pétursson"
-site_description = "Ferilskrá og verkefni Magnúsar Péturssonar."
+site_description = "Magnús Pétursson hannar, smíðar og kennir: rafeindatækni, stafræn framleiðsla og reikniritalist."
 site_author = "Magnús Pétursson"
 site_url = "https://magnusp.is/is/"
-repo_url = "https://github.com/MagnusPetursson/magnusp"
-repo_name = "MagnusPetursson/magnusp"
 copyright = "&copy; 2026 Magnús Pétursson"
 
 docs_dir = "docs-is"
@@ -18,51 +16,68 @@ site_dir = "site/is"
 
 nav = [
     { "Forsíða" = "index.md" },
+    { "Verkefni" = [
+        "projects/index.md",
+        "projects/mccompass.md",
+        "projects/glasslight.md",
+        "projects/pfb-studio.md",
+    ] },
     { "Um mig" = "about.md" },
-    { "Verkefni" = "projects.md" },
-    { "Reynsla" = "experience.md" },
-    { "Hæfni" = "skills.md" },
     { "Hafa samband" = "contact.md" },
 ]
 
 extra_css = ["/stylesheets/extra.css"]
+extra_javascript = ["/javascripts/site.js"]
 
 [project.theme]
+custom_dir = "overrides"
+font = false  # self-hosted in docs/fonts/, declared in extra.css
 language = "is"
+favicon = "/images/favicon.svg"
 features = [
-    "announce.dismiss",
     "content.code.copy",
-    "content.footnote.tooltips",
-    "content.tooltips",
     "navigation.footer",
     "navigation.indexes",
     "navigation.instant",
     "navigation.instant.prefetch",
-    "navigation.path",
-    "navigation.sections",
+    "navigation.tabs",
     "navigation.top",
-    "navigation.tracking",
-    "search.highlight",
 ]
 
 [[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
 scheme = "default"
-primary = "black"
-accent = "blue"
-toggle.icon = "lucide/sun"
+toggle.icon = "lucide/moon"
 toggle.name = "Skipta í dökkt útlit"
 
 [[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
 scheme = "slate"
-primary = "black"
-accent = "blue"
-toggle.icon = "lucide/moon"
+toggle.icon = "lucide/sun"
 toggle.name = "Skipta í ljóst útlit"
 
-[project.theme.font]
-text = "Roboto"
-code = "Roboto Mono"
 
+[project.theme.icon]
+menu = "lucide/menu"
+top = "lucide/arrow-up"
+
+[project.plugins.search]
+enabled = false
+
+[project.extra]
+generator = false
+
+# GoatCounter analytics: the site code from magnusp.goatcounter.com. Leave empty to load
+# no analytics. GoatCounter ignores localhost, so local previews aren't counted.
+goatcounter = "magnusp"
+
+# Contact form (Formspree). Until `action` is set, the contact page shows a placeholder.
+# `fields` become hidden inputs; _subject sets the subject of the email Formspree sends.
+[project.extra.contact_form]
+action = "https://formspree.io/f/mrpbdand"
+fields = { _subject = "Skilaboð af magnusp.is" }
+
+# Language switcher: the header links each page to the same page in the other language.
 [[project.extra.alternate]]
 name = "English"
 link = "/"

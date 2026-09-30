@@ -1,31 +1,37 @@
 ---
-icon: lucide/user
+title: About
+description: Maker and educator in Reykjavík, teaching digital fabrication and product and microelectronics design.
+hide:
+  - navigation
+  - toc
 ---
 
 # About
 
-## Bio
+I'm Magnús Pétursson, a maker and educator in Reykjavík.
 
-Write a short bio (5-8 lines):
+## What I do
 
-- Who you are
-- What you do
-- What you care about
+I teach digital fabrication and product and microelectronics design: taking an idea from a sketch into CAD, through the machines, and out the other side as a finished object or a working circuit board.
 
-## What I Work On
+Outside of teaching I build my own projects, in hardware and in software. Some are physical, like [McCompass](projects/mccompass.md), a circuit board shaped like a Minecraft sprite. Others are software, like [GlassLight](projects/glasslight.md) and [PFB Studio](projects/pfb-studio.md).
 
-- [Area 1]
-- [Area 2]
-- [Area 3]
+The part I enjoy most is the problem solving: finding a way to make something when there isn't an obvious one.
 
-## Principles
+## Tools
 
-- [Principle 1]
-- [Principle 2]
-- [Principle 3]
+Machines
+:   Laser cutter, 3D printers (FDM and resin), vinyl cutter, CNC router, Roland PCB mill, soldering and SMD rework, and hand tools for wood and metal
 
-## Timeline
+Design software
+:   Fusion (CAD and CAM), FreeCAD, KiCad, Inkscape, Blender
 
-- **[Year]** - [Milestone]
-- **[Year]** - [Milestone]
-- **[Year]** - [Milestone]
+Electronics
+:   ESP32 microcontrollers, addressable LEDs, GNSS, LoRa radio
+
+Code
+:   C++ (Vulkan, SDL, SFML), Python, JavaScript, PlatformIO
+
+## Background
+
+I studied innovation and product design at Fjölbrautaskólinn í Breiðholti (FB) and completed Fab Academy in 2025. I've been teaching digital fabrication since 2018.

@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+
+{#- Contact page: the page's Markdown, then a form that posts to the form service set in
+    [project.extra.contact_form] (action URL, plus any hidden fields the service needs). -#}
+{% set is_is = config.theme.language == "is" %}
+{% set t = {
+  "name": "Nafn" if is_is else "Name",
+  "email": "Netfang, svo ég geti svarað" if is_is else "Your email, so I can reply",
+  "message": "Skilaboð" if is_is else "Message",
+  "send": "Senda" if is_is else "Send message",
+  "sending": "Sendi…" if is_is else "Sending…",
+  "sent": "Takk, skilaboðin eru komin til mín." if is_is else "Thanks, your message is on its way to me.",
+  "failed": "Ekki tókst að senda. Reyndu aftur eftir smá stund." if is_is else "The message didn't send. Please try again in a moment.",
+  "missing": "Skilaboðaform birtist hér þegar formþjónusta hefur verið valin." if is_is else "The contact form appears here once a form service is set up.",
+} %}
+
+{% block content %}
+  {{ page.content }}
+  {% set form = config.extra.contact_form %}
+  {% if form and form.action %}
+    <form class="mp-form" action="{{ form.action }}" method="post"
+          data-sending="{{ t.sending }}" data-sent="{{ t.sent }}" data-failed="{{ t.failed }}">
+      {% for key, value in (form.fields or {}) | items %}
+        <input type="hidden" name="{{ key }}" value="{{ value }}">
+      {% endfor %}
+      <label class="mp-form__field">
+        <span>{{ t.name }}</span>
+        <input type="text" name="name" autocomplete="name">
+      </label>
+      <label class="mp-form__field">
+        <span>{{ t.email }}</span>
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+      <label class="mp-form__field">
+        <span>{{ t.message }}</span>
+        <textarea name="message" rows="7" required></textarea>
+      </label>
+      {#- Honeypot: hidden from people, filled by bots. Formspree drops any submission with _gotcha set. -#}
+      <label class="mp-form__trap" aria-hidden="true">
+        Leave empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+      </label>
+      <div class="mp-form__actions">
+        <button type="submit" class="md-button md-button--primary">{{ t.send }}</button>
+        <p class="mp-form__status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+  {% else %}
+    <p class="mp-form__missing">{{ t.missing }}</p>
+  {% endif %}
+{% endblock %}

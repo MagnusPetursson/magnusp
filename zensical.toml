@@ -1,15 +1,13 @@
 # English site (default language), built to site/.
 # The Icelandic site lives in zensical.is.toml and builds to site/is/.
-# Keep shared settings (theme, features, palette, fonts) in sync between both.
+# Keep the theme, plugins and extra sections in sync between both.
 # Reference: https://zensical.org/docs/
 
 [project]
 site_name = "Magnús Pétursson"
-site_description = "Portfolio of Magnús Pétursson: projects, experience, and contact."
+site_description = "Magnús Pétursson designs, builds and teaches: electronics, digital fabrication and generative art."
 site_author = "Magnús Pétursson"
 site_url = "https://magnusp.is/"
-repo_url = "https://github.com/MagnusPetursson/magnusp"
-repo_name = "MagnusPetursson/magnusp"
 copyright = "&copy; 2026 Magnús Pétursson"
 
 docs_dir = "docs"
@@ -17,52 +15,68 @@ site_dir = "site"
 
 nav = [
     { "Home" = "index.md" },
+    { "Projects" = [
+        "projects/index.md",
+        "projects/mccompass.md",
+        "projects/glasslight.md",
+        "projects/pfb-studio.md",
+    ] },
     { "About" = "about.md" },
-    { "Projects" = "projects.md" },
-    { "Experience" = "experience.md" },
-    { "Skills" = "skills.md" },
     { "Contact" = "contact.md" },
 ]
 
 extra_css = ["stylesheets/extra.css"]
+extra_javascript = ["javascripts/site.js"]
 
 [project.theme]
+custom_dir = "overrides"
+font = false  # self-hosted in docs/fonts/, declared in extra.css
 language = "en"
+favicon = "images/favicon.svg"
 features = [
-    "announce.dismiss",
     "content.code.copy",
-    "content.footnote.tooltips",
-    "content.tooltips",
     "navigation.footer",
     "navigation.indexes",
     "navigation.instant",
     "navigation.instant.prefetch",
-    "navigation.path",
-    "navigation.sections",
+    "navigation.tabs",
     "navigation.top",
-    "navigation.tracking",
-    "search.highlight",
 ]
 
 [[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
 scheme = "default"
-primary = "black"
-accent = "blue"
-toggle.icon = "lucide/sun"
+toggle.icon = "lucide/moon"
 toggle.name = "Switch to dark mode"
 
 [[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
 scheme = "slate"
-primary = "black"
-accent = "blue"
-toggle.icon = "lucide/moon"
+toggle.icon = "lucide/sun"
 toggle.name = "Switch to light mode"
 
-[project.theme.font]
-text = "Roboto"
-code = "Roboto Mono"
 
-# Language switcher (shown in the header on every page)
+[project.theme.icon]
+menu = "lucide/menu"
+top = "lucide/arrow-up"
+
+[project.plugins.search]
+enabled = false
+
+[project.extra]
+generator = false
+
+# GoatCounter analytics: the site code from magnusp.goatcounter.com. Leave empty to load
+# no analytics. GoatCounter ignores localhost, so local previews aren't counted.
+goatcounter = "magnusp"
+
+# Contact form (Formspree). Until `action` is set, the contact page shows a placeholder.
+# `fields` become hidden inputs; _subject sets the subject of the email Formspree sends.
+[project.extra.contact_form]
+action = "https://formspree.io/f/mrpbdand"
+fields = { _subject = "Message from magnusp.is" }
+
+# Language switcher: the header links each page to the same page in the other language.
 [[project.extra.alternate]]
 name = "English"
 link = "/"
