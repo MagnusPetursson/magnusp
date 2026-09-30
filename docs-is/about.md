@@ -1,39 +1,37 @@
 ---
 title: Um mig
-description: Smiður og kennari í Reykjavík sem kennir stafræna framleiðslu og vöru- og örrafeindahönnun.
+description: Magnús Pétursson fæst við hönnun, smíði og kennslu í Reykjavík og kennir stafræna framleiðslu, vöruhönnun og rafeindahönnun (microelectronics).
 hide:
   - navigation
   - toc
 ---
 
-<!-- DRÖG: þýðing, Magnús fer yfir -->
-
 # Um mig
 
-Ég heiti Magnús Pétursson og er smiður og kennari í Reykjavík.
+Ég heiti Magnús Pétursson og fæst við hönnun, smíði og kennslu í Reykjavík.
 
-## Hvað ég geri
+## Það sem ég geri
 
-Ég kenni stafræna framleiðslu og vöru- og örrafeindahönnun: að taka hugmynd frá skissu yfir í tölvuteikningu, í gegnum vélarnar og út hinum megin sem fullbúinn hlut eða virkt rafrásaborð.
+Ég kenni stafræna framleiðslu, vöruhönnun og rafeindahönnun (microelectronics). Í kennslunni er unnið með allt ferlið: frá fyrstu skissu að CAD-líkani og áfram í smíðina, þar til úr verður fullbúinn hlutur eða virkt PCB.
 
-Utan kennslunnar smíða ég mín eigin verkefni, bæði vélbúnað og hugbúnað. Sum eru áþreifanleg, eins og [McCompass](projects/mccompass.md), rafrásaborð í laginu eins og Minecraft-mynd. Önnur eru hugbúnaður, eins og [GlassLight](projects/glasslight.md) og [PFB Studio](projects/pfb-studio.md).
+Utan kennslunnar vinn ég að eigin vélbúnaðar- og hugbúnaðarverkefnum. Sum eru áþreifanleg, eins og [McCompass](projects/mccompass.md), þar sem PCB tekur lögun áttavitans úr Minecraft. Önnur eru forrit, eins og [GlassLight](projects/glasslight.md) og [PFB Studio](projects/pfb-studio.md).
 
-Skemmtilegast finnst mér að leysa vandamál: að finna leið til að smíða eitthvað þegar engin augljós leið er til.
+Mér finnst skemmtilegast að leysa vandamálin sem koma upp: að finna leið til að smíða eitthvað þegar lausnin liggur ekki í augum uppi.
 
-## Tól
+## Verkfæri og tækni
 
-Vélar
-:   Leysiskeri, þrívíddarprentarar (FDM og resín), vínylskeri, CNC-fræsari, Roland-rafrásafræsari, lóðun og SMD-viðgerðir, og handverkfæri fyrir tré og málm
+Vélar og verkstæðisvinna
+:   Leysiskeri, þrívíddarprentarar (FDM og resin), vínylskeri, CNC-fræsari, Roland PCB-fræsari, lóðun, SMD rework og handverkfæri til tré- og málmsmíði
 
 Hönnunarhugbúnaður
 :   Fusion (CAD og CAM), FreeCAD, KiCad, Inkscape, Blender
 
 Rafeindatækni
-:   ESP32-örtölvur, stýranlegar ljósdíóður, GNSS, LoRa-útvarp
+:   ESP32 microcontrollers, addressable LEDs, GNSS og LoRa
 
-Kóði
+Forritun
 :   C++ (Vulkan, SDL, SFML), Python, JavaScript, PlatformIO
 
 ## Bakgrunnur
 
-Ég lærði nýsköpun og vöruhönnun í Fjölbrautaskólanum í Breiðholti (FB) og lauk Fab Academy árið 2025. Ég hef kennt stafræna framleiðslu síðan 2018.
+Ég lærði nýsköpun og vöruhönnun við Fjölbrautaskólann í Breiðholti (FB) og lauk Fab Academy árið 2025. Ég hef kennt stafræna framleiðslu frá árinu 2018.

@@ -1,57 +1,55 @@
 ---
 title: PFB Studio
-description: Forrit fyrir Windows og Linux sem keyrir listvélar PerlinFieldBot á þinni eigin tölvu og teiknar þær í rauntíma.
+description: Forrit fyrir Windows og Linux sem notar PerlinFieldBot til að búa til generative art á tölvunni þinni og sýnir verkin verða til í rauntíma.
 hide:
   - toc
 ---
 
-<!-- DRÖG: þýðing, Magnús fer yfir -->
-
 # PFB Studio
 
-Forrit fyrir Windows og Linux sem keyrir listvélar PerlinFieldBot á þinni eigin tölvu, svo þú getur fylgst með hverju verki teiknast í rauntíma.
+Forrit fyrir Windows og Linux sem notar PerlinFieldBot til að búa til generative art á tölvunni þinni. Þú getur fylgst með því hvernig hvert verk verður til í rauntíma.
 
 <dl class="mp-facts">
-  <dt>Hvað</dt><dd>Forrit fyrir Windows og Linux</dd>
-  <dt>Uppruni</dt><dd>Kvísl af <a href="https://github.com/dvalim/perlinfieldbot">perlinfieldbot</a> eftir dvalim</dd>
-  <dt>Smíðað með</dt><dd>C++17, SFML, Dear ImGui, CMake</dd>
-  <dt>Sækja</dt><dd><a href="https://github.com/MagnusPetursson/pfb-studio/releases/latest">Nýjasta útgáfa</a>, <a href="https://github.com/MagnusPetursson/pfb-studio">kóðinn á GitHub</a></dd>
+  <dt>Forritið</dt><dd>Forrit fyrir Windows og Linux</dd>
+  <dt>Uppruni</dt><dd>Fork af <a href="https://github.com/dvalim/perlinfieldbot">perlinfieldbot</a> eftir dvalim</dd>
+  <dt>Þróað með</dt><dd>C++17, SFML, Dear ImGui, CMake</dd>
+  <dt>Sækja</dt><dd><a href="https://github.com/MagnusPetursson/pfb-studio/releases/latest">Nýjasta útgáfa</a>, <a href="https://github.com/MagnusPetursson/pfb-studio">frumkóði á GitHub</a></dd>
 </dl>
 
-## Hvað það gerir
+## Það sem forritið býður upp á
 
-- Veldu vél, stilltu færibreyturnar og fylgstu með myndinni byggjast upp í rauntíma.
-- Láttu forritið velja fræið, eða sláðu það inn til að endurtaka niðurstöðu.
-- Vistaðu í fullri upplausn sem PNG eða JPEG með vistunarglugga stýrikerfisins.
-- Settu það upp sem ferðaútgáfu fyrir Windows, Debian-pakka eða AppImage. Smíðin er endurtakanleg með CMake og skjálaus prófunarhamur teiknar allar vélarnar fyrir sjálfvirkar prófanir.
+- Veldu generator, breyttu færibreytunum og fylgstu með því hvernig myndin verður til í rauntíma.
+- Láttu forritið velja seed-gildi sjálfkrafa eða sláðu inn tiltekið gildi til að endurskapa fyrri niðurstöðu.
+- Vistaðu myndina í fullri upplausn sem PNG eða JPEG með vistunarglugga stýrikerfisins.
+- Notaðu portable-útgáfuna fyrir Windows, Debian-pakka eða AppImage. Hægt er að endurtaka build-ferlið með CMake. Sérstakur headless-prófunarhamur býr til myndir með öllum generators fyrir sjálfvirkar prófanir.
 
-## Listvélarnar
+## Fimm leiðir til að búa til myndir
 
-Fimm vélar, hver með sínar færibreytur. Þessar myndir voru teiknaðar með PFB Studio.
+Hver þessara fimm generators hefur sínar færibreytur. Myndirnar hér að neðan voru búnar til í PFB Studio.
 
 <div class="mp-figures" markdown>
 <figure>
-  <img src="/images/pfb-studio/flowfield.webp" alt="Þéttar flæðandi línur í magenta, fjólubláu og ólífugrænu á dökkum grunni" width="1000" height="1000" loading="lazy">
-  <figcaption><strong>Suðflæði.</strong> Lífræn hreyfing sem Perlin-suð stýrir.</figcaption>
+  <img src="/images/pfb-studio/flowfield.webp" alt="Þéttar, flæðandi línur í magenta, fjólubláu og ólífugrænu á dökkum grunni" width="1000" height="1000" loading="lazy">
+  <figcaption><strong>Noise flowfield.</strong> Lífræn hreyfing sem er stýrt af Perlin noise.</figcaption>
 </figure>
 <figure>
   <img src="/images/pfb-studio/flame.webp" alt="Glóandi grænir þræðir og bleikir bogar á dökkplómulituðum grunni" width="1000" height="1000" loading="lazy">
-  <figcaption><strong>Brotamyndalogi.</strong> Ítruð fallakerfi sem byggja upp flókin brotamynstur.</figcaption>
+  <figcaption><strong>Fractal flame.</strong> Iterated function systems sem mynda flókin fractal-mynstur.</figcaption>
 </figure>
 <figure>
-  <img src="/images/pfb-studio/growth.webp" alt="Ljósar agnaþyrpingar og blágrænir blúnduhringir á næstum svörtum grunni" width="1000" height="1000" loading="lazy">
-  <figcaption><strong>Lífrænn vöxtur.</strong> Hermd vaxtarmynstur úr náttúrunni.</figcaption>
+  <img src="/images/pfb-studio/growth.webp" alt="Ljósar agnaþyrpingar og blúndulíkir, blágrænir hringir á nær svörtum grunni" width="1000" height="1000" loading="lazy">
+  <figcaption><strong>Organic growth.</strong> Hermun á vaxtarmynstrum úr náttúrunni.</figcaption>
 </figure>
 <figure>
-  <img src="/images/pfb-studio/fujii.webp" alt="Gegnsæjar, regnbogalitaðar slæður sem leggjast í hátt form á svörtu" width="1000" height="1000" loading="lazy">
-  <figcaption><strong>Fujii-aðdráttarafl.</strong> Myndir af undarlegum aðdráttarafli.</figcaption>
+  <img src="/images/pfb-studio/fujii.webp" alt="Hálfgagnsæjar, regnbogalitaðar slæður sem mynda háar fellingar á svörtum grunni" width="1000" height="1000" loading="lazy">
+  <figcaption><strong>Fujii attractor.</strong> Sjónræn framsetning á strange attractor.</figcaption>
 </figure>
 <figure>
-  <img src="/images/pfb-studio/fujii-2.webp" alt="Fínt dökkgrænt línunet sem leggst í fellingar á ljósgráum grunni" width="1000" height="1000" loading="lazy">
-  <figcaption><strong>Fujii-aðdráttarafl</strong>, ljósari litir.</figcaption>
+  <img src="/images/pfb-studio/fujii-2.webp" alt="Fíngert, dökkgrænt línunet sem myndar fellingar á ljósgráum grunni" width="1000" height="1000" loading="lazy">
+  <figcaption><strong>Fujii attractor</strong> með ljósari litum.</figcaption>
 </figure>
 <figure>
-  <img src="/images/pfb-studio/galaxy.webp" alt="Reykkenndir sveipir í lavender, límónugrænu og rósbleiku inni í daufum punktakúlum" width="1000" height="1000" loading="lazy">
-  <figcaption><strong>Vetrarbrautir.</strong> Agnakerfi sem mynda stjörnuþyrpingar.</figcaption>
+  <img src="/images/pfb-studio/galaxy.webp" alt="Reykkenndir sveipir í ljósfjólubláu, límónugrænu og rósbleiku innan í daufum kúlum úr punktum" width="1000" height="1000" loading="lazy">
+  <figcaption><strong>Galaxies.</strong> Agnakerfi sem mynda form stjörnukerfa.</figcaption>
 </figure>
 </div>

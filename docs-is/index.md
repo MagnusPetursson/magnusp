@@ -1,19 +1,17 @@
 ---
 template: home.html
 title: Magnús Pétursson
-description: Smiður og kennari í Reykjavík. Ég hanna, smíða og kenni stafræna framleiðslu, rafeindatækni og innbyggð kerfi.
+description: Hönnun, smíði og kennsla í Reykjavík, með áherslu á stafræna framleiðslu, rafeindatækni og embedded systems.
 hide:
   - footer
 ---
-
-<!-- DRÖG: þýðing, Magnús fer yfir -->
 
 <div class="mp-hero" markdown>
 <div markdown>
 
 # Ég hanna, smíða og kenni.
 
-Ég heiti Magnús Pétursson og er smiður og kennari í Reykjavík. Ég kenni stafræna framleiðslu og vöru- og örrafeindahönnun, og þess á milli smíða ég minn eigin vélbúnað og hugbúnað.
+Ég heiti Magnús Pétursson og fæst við hönnun, smíði og kennslu í Reykjavík. Ég kenni stafræna framleiðslu, vöruhönnun og rafeindahönnun (microelectronics). Þess á milli vinn ég að eigin vélbúnaðar- og hugbúnaðarverkefnum.
 
 <div class="mp-hero__actions" markdown>
 [Skoða verkefnin](projects/index.md){ .md-button .md-button--primary }
@@ -22,7 +20,7 @@ hide:
 
 </div>
 <figure class="mp-hero__photo">
-  <img src="/images/portrait.webp" alt="Magnús límir saman leysiskorið krossviðarlíkan á vinnuborði" width="1000" height="1500">
+  <img src="/images/portrait.webp" alt="Magnús límir saman leysiskorið líkan úr krossviði við vinnuborð" width="1000" height="1500">
 </figure>
 </div>
 
@@ -30,15 +28,15 @@ hide:
 
 <div class="mp-feature" markdown>
 <figure>
-  <img src="/images/mccompass/pcb_iso.webp" alt="Mynd af rafrásaborði McCompass: 46 ljósdíóður í laginu eins og áttavitinn úr Minecraft" width="1400" height="1150" loading="lazy">
+  <img src="/images/mccompass/pcb_iso.webp" alt="Þrívíddarmynd af PCB fyrir McCompass, með 46 LED-ljósum raðað í lögun Minecraft-áttavitans" width="1400" height="1150" loading="lazy">
 </figure>
 <div markdown>
 
 ### McCompass
 
-Vasastór Minecraft-áttaviti í raunheimum, smíðaður með vini. Nálin er 46 ljósdíóður á bak við 5 mm pixlanet, og hún bendir á vistaðan stað eða á tvíburann sinn yfir LoRa-útvarp, án síma, SIM-korts eða Wi‑Fi.
+Áttavitinn úr Minecraft, smíðaður í vasastærð í samstarfi við vin minn. Nálin birtist með 46 LED-ljósum á bak við 5 mm pixlanet og vísar á vistaðan stað eða sams konar tæki sem hún er í LoRa-sambandi við. Hvorki þarf síma, SIM-kort né Wi‑Fi.
 
-<p class="mp-tools">KiCad, FreeCAD, ESP32-S3, GNSS, LoRa, fjögurra lita þrívíddarprentun</p>
+<p class="mp-tools">KiCad, FreeCAD, ESP32-S3, GNSS, LoRa, FDM-þrívíddarprentun í fjórum litum</p>
 
 [Lesa um McCompass](projects/mccompass.md)
 
@@ -47,13 +45,13 @@ Vasastór Minecraft-áttaviti í raunheimum, smíðaður með vini. Nálin er 46
 
 <div class="mp-wide" markdown>
 <figure>
-  <img src="/images/glasslight/gallery.webp" alt="Þrjú ljósbrotsverk gerð í GlassLight" width="1968" height="360" loading="lazy">
+  <img src="/images/glasslight/gallery.webp" alt="Þrjú verk búin til með ljósmynstrum í GlassLight" width="1968" height="360" loading="lazy">
 </figure>
 <div markdown>
 
 ### GlassLight
 
-Listsmiðja sem rekur ljós í gegnum ósýnilegt, reiknað gler og málar aðeins ljósbrotin sem lenda á veggnum. Hvert verk má endurskapa út frá fræi sínu.
+Forrit fyrir generative art sem hermir ferð ljóss í gegnum glerform og birtir aðeins ljósmynstrin sem lenda á veggnum (caustics). Glerformið verður til með reikniritum og sést ekki í myndinni. Hægt er að endurskapa hvert verk með sama seed-gildi.
 
 <p class="mp-tools">C++20, Vulkan, SDL 3, Windows og Linux</p>
 
@@ -64,13 +62,13 @@ Listsmiðja sem rekur ljós í gegnum ósýnilegt, reiknað gler og málar aðei
 
 <div class="mp-feature" markdown>
 <figure>
-  <img src="/images/pfb-studio/fujii-2.webp" alt="Verk úr PFB Studio: fínt dökkgrænt línunet sem leggst í fellingar" width="1000" height="1000" loading="lazy">
+  <img src="/images/pfb-studio/fujii-2.webp" alt="Verk úr PFB Studio: fíngert, dökkgrænt línunet sem myndar fellingar" width="1000" height="1000" loading="lazy">
 </figure>
 <div markdown>
 
 ### PFB Studio
 
-Forrit fyrir Windows og Linux sem keyrir listvélar PerlinFieldBot á þinni eigin tölvu og teiknar þær í rauntíma.
+Forrit fyrir Windows og Linux sem notar PerlinFieldBot til að búa til generative art á tölvunni þinni. Þú getur fylgst með því hvernig verkin verða til í rauntíma.
 
 <p class="mp-tools">C++17, SFML, Dear ImGui, CMake</p>
 

@@ -1,52 +1,50 @@
 ---
 title: GlassLight
-description: Listsmiðja sem mótar ljós í gegnum ósýnilegt, reiknað gler.
+description: Forrit fyrir generative art sem hermir ferð ljóss í gegnum ósýnileg glerform og birtir ljósmynstrin sem þau mynda (caustics).
 hide:
   - toc
 ---
 
-<!-- DRÖG: þýðing, Magnús fer yfir -->
-
 # GlassLight
 
-Listsmiðja sem rekur ljós í gegnum reiknað gler og sýnir aðeins litríku ljósbrotin sem lenda á veggnum. Glerið sjálft er ósýnilegt; þú sérð bara hvað það gerir við ljósið.
+Forrit fyrir generative art sem hermir ferð ljóss í gegnum glerform og birtir aðeins litríku ljósmynstrin sem lenda á veggnum, svokölluð caustics. Glerformið verður til með reikniritum og er sjálft ósýnilegt; aðeins áhrif þess á ljósið sjást.
 
 <dl class="mp-facts">
-  <dt>Hvað</dt><dd>Forrit fyrir Windows og Linux</dd>
-  <dt>Smíðað með</dt><dd>C++20, Vulkan 1.2, SDL 3, Dear ImGui</dd>
-  <dt>Leyfi</dt><dd>MIT, opinn hugbúnaður</dd>
-  <dt>Sækja</dt><dd><a href="https://github.com/MagnusPetursson/GlassLight/releases/latest">Nýjasta útgáfa</a>, <a href="https://github.com/MagnusPetursson/GlassLight">kóðinn á GitHub</a></dd>
+  <dt>Forritið</dt><dd>Forrit fyrir Windows og Linux</dd>
+  <dt>Þróað með</dt><dd>C++20, Vulkan 1.2, SDL 3, Dear ImGui</dd>
+  <dt>Hugbúnaðarleyfi</dt><dd>MIT, opinn hugbúnaður</dd>
+  <dt>Sækja</dt><dd><a href="https://github.com/MagnusPetursson/GlassLight/releases/latest">Nýjasta útgáfa</a>, <a href="https://github.com/MagnusPetursson/GlassLight">frumkóði á GitHub</a></dd>
 </dl>
 
 <figure>
-  <img src="/images/glasslight/studio.webp" alt="GlassLight: ljósbrotsverk á striganum með stillingum við hliðina" width="1600" height="967">
-  <figcaption>Smiðjan. Stillingarnar uppfæra strigann um leið og þú breytir þeim.</figcaption>
+  <img src="/images/glasslight/studio.webp" alt="Viðmót GlassLight: ljósmynstur á myndfletinum og stillingar til hliðar" width="1600" height="967">
+  <figcaption>Viðmótið. Myndin uppfærist jafnóðum þegar stillingunum er breytt.</figcaption>
 </figure>
 
-## Af hverju
+## Hugmyndin að baki
 
-Ég hef alltaf heillast af reikniritalist. Hugmyndin að þessu verki kviknaði þegar ég horfði á ljósakrónu dreifa ljósi frá borðlampa um loftið á meðan hún sveiflaðist í golunni. GlassLight er tilraun til að gera það viljandi.
+Ég hef alltaf heillast af generative art. Hugmyndin að GlassLight kviknaði þegar ég horfði á ljósakrónu sveiflast í golunni og dreifa ljósi frá borðlampa yfir loftið. Ég vildi geta búið til slík ljósmynstur sjálfur.
 
-## Hvernig það virkar
+## Hvernig forritið virkar
 
-Hvert verk byrjar á fræi. Veldu eina af sex glerfjölskyldum (Pebble, Lens, Ribbon, Faceted Vessel, Cut Crystal eða Fracture) og mótaðu svo form, litaspjald, efni, ljósgjafa, vegg og hreyfingu á meðan Vulkan-teiknarinn endurteiknar strigann.
+Hvert verk hefst með seed-gildi. Veldu eina af sex gerðum glerforma: Pebble, Lens, Ribbon, Faceted Vessel, Cut Crystal eða Fracture. Síðan geturðu breytt löguninni, litunum, efninu, ljósgjafanum, veggnum og hreyfingunni. Vulkan renderer uppfærir myndina jafnóðum.
 
-Sérstök forskoðun leyfir þér að snúa ósýnilega glerhlutnum sjálfum, með útlínum ef þú vilt, svo þú sjáir hvað beygir ljósið.
+Í sérstakri forskoðun geturðu skoðað sjálfan glerhlutinn frá öllum hliðum. Þar er líka hægt að birta útlínur hans til að sjá betur hvernig hann beygir ljósið.
 
 <figure>
-  <img src="/images/glasslight/gallery.webp" alt="Þrjú útflutt verk: Cathedral Faceted, Ember Cut Crystal og Tidal Ribbon" width="1968" height="360" loading="lazy">
-  <figcaption>Útflutt verk: Cathedral / Faceted Vessel, Ember / Cut Crystal, Tidal / Ribbon.</figcaption>
+  <img src="/images/glasslight/gallery.webp" alt="Þrjú verk flutt út úr GlassLight: Cathedral Faceted, Ember Cut Crystal og Tidal Ribbon" width="1968" height="360" loading="lazy">
+  <figcaption>Verk flutt út úr GlassLight: Cathedral / Faceted Vessel, Ember / Cut Crystal, Tidal / Ribbon.</figcaption>
 </figure>
 
 <figure>
   <video controls muted loop playsinline preload="none" poster="/images/glasslight/loop-poster.webp" width="640" height="360">
     <source src="/images/glasslight/loop.mp4" type="video/mp4">
   </video>
-  <figcaption>Cut Crystal-verk sem snýst í einni samfelldri lykkju, hægt á.</figcaption>
+  <figcaption>Cut Crystal-verk í samfelldri endurtekningu, sýnt á minni hraða.</figcaption>
 </figure>
 
-## Endurskapanlegt frá grunni
+## Verkið geymir sína eigin uppskrift
 
-Hver útflutt PNG-mynd geymir alla samsetningu verksins inni í skránni. Opnaðu myndina í GlassLight og nákvæmlega sömu stillingar koma aftur, svo myndin er líka sín eigin uppskrift.
+Hver PNG-mynd sem er flutt út geymir allar stillingar verksins í skránni. Þegar myndin er opnuð aftur í GlassLight hleður forritið nákvæmlega sömu stillingum. Myndin er því líka uppskrift að sjálfri sér.
 
-Hreyfing virkar eins: verk má flytja út sem samfellda MP4-lykkju af einum heilum hring, og hún er teiknuð á ákvarðanlegan hátt svo sama fræ gefur alltaf sama myndband.
+Verk í hreyfingu má flytja út sem MP4-myndband af heilum snúningi, þar sem endir og upphaf falla saman. Myndbandið er búið til með deterministic rendering, svo sama seed-gildi og sömu stillingar gefa alltaf sömu niðurstöðu.

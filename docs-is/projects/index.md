@@ -1,27 +1,25 @@
 ---
 title: Verkefni
-description: Vélbúnaður og hugbúnaður eftir Magnús Pétursson.
+description: Vélbúnaðar- og hugbúnaðarverkefni sem Magnús Pétursson hefur hannað og smíðað.
 hide:
   - toc
 ---
 
-<!-- DRÖG: þýðing, Magnús fer yfir -->
-
 # Verkefni
 
-Hlutir sem ég hef hannað og smíðað: vélbúnaður og hugbúnaður. Hver síða segir frá því hvað verkefnið er, hvernig það virkar og hvar það stendur.
+Hér eru nokkur vélbúnaðar- og hugbúnaðarverkefni sem ég hef hannað og smíðað. Á hverri verkefnasíðu segi ég frá hugmyndinni, hvernig hún er útfærð og stöðu verkefnisins.
 
 <div class="mp-feature" markdown>
 <figure>
-  <img src="/images/mccompass/pcb_iso.webp" alt="Mynd af rafrásaborði McCompass" width="1400" height="1150">
+  <img src="/images/mccompass/pcb_iso.webp" alt="Þrívíddarmynd af PCB fyrir McCompass" width="1400" height="1150">
 </figure>
 <div markdown>
 
 ### McCompass
 
-Vasastór Minecraft-áttaviti í raunheimum sem bendir á vistaðan stað eða á tvíburann sinn yfir LoRa-útvarp.
+Áttavitinn úr Minecraft, smíðaður í vasastærð. Hann vísar á vistaðan stað eða sams konar tæki sem hann er í LoRa-sambandi við.
 
-<p class="mp-tools">Vélbúnaður, í vinnslu</p>
+<p class="mp-tools">Vélbúnaður, í þróun</p>
 
 [Lesa um McCompass](mccompass.md)
 
@@ -30,13 +28,13 @@ Vasastór Minecraft-áttaviti í raunheimum sem bendir á vistaðan stað eða �
 
 <div class="mp-feature" markdown>
 <figure>
-  <img src="/images/glasslight/studio.webp" alt="GlassLight-forritið" width="1600" height="967" loading="lazy">
+  <img src="/images/glasslight/studio.webp" alt="Viðmót GlassLight" width="1600" height="967" loading="lazy">
 </figure>
 <div markdown>
 
 ### GlassLight
 
-Listsmiðja sem mótar ljós í gegnum ósýnilegt, reiknað gler.
+Forrit fyrir generative art sem hermir ferð ljóss í gegnum glerform sem verða til með reikniritum. Glerið sjálft er ósýnilegt; aðeins ljósmynstrin sem það myndar sjást.
 
 <p class="mp-tools">Hugbúnaður, útgefinn</p>
 
@@ -53,7 +51,7 @@ Listsmiðja sem mótar ljós í gegnum ósýnilegt, reiknað gler.
 
 ### PFB Studio
 
-Forrit sem keyrir listvélar PerlinFieldBot í rauntíma á þinni eigin tölvu.
+Forrit sem notar PerlinFieldBot til að búa til generative art á tölvunni þinni og sýnir verkin verða til í rauntíma.
 
 <p class="mp-tools">Hugbúnaður, útgefinn</p>
 
