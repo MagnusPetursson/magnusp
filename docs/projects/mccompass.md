@@ -12,7 +12,7 @@ A pocket-sized, real-life Minecraft compass. Press the button to save a spot, li
 <dl class="mp-facts">
   <dt>What</dt><dd>Two identical handheld compasses, 70 × 60 × 18 mm</dd>
   <dt>With</dt><dd>Built together with <a href="https://kristofer.is">Kristofer</a></dd>
-  <dt>Status</dt><dd>Version 2 boards ordered in September 2026; waiting on delivery</dd>
+  <dt>Version</dt><dd>2, with GNSS, LoRa and a heading sensor</dd>
   <dt>Tools</dt><dd>KiCad, FreeCAD, Freerouting, PlatformIO, Bambu Studio</dd>
   <dt>Parts</dt><dd>Seeed XIAO ESP32-S3, 46 × WS2812B-2020, u-blox MAX-M10S GNSS, SX1262 LoRa, LSM303AGR</dd>
 </dl>
@@ -67,10 +67,4 @@ The 4-layer board is set up for machine assembly, with 117 parts placed by the f
   <figcaption>The back: XIAO ESP32-S3 with its USB-C port, the LoRa module, GNSS receiver and button.</figcaption>
 </figure>
 
-The case is two printed parts held by M2 screws in brass heat-set inserts, and the bezel prints in four matte greys to match the sprite. Its design is checked automatically on every rebuild: 22 checks cover interference with the populated board, LED alignment with the windows (within 0.005 mm), screw clearance, battery fit and openings. The firmware's compass maths has unit tests that run on a PC before any hardware exists.
-
-## Next
-
-Assemble the first units when the boards arrive, print a diffuser test piece to tune how the LED pixels glow through the face, then write the MeshCore-based firmware and walk-test range, GPS fix, heading accuracy and battery life.
-
-The source isn't public yet.
+The case is two printed parts held by M2 screws in brass heat-set inserts, and the bezel prints in four matte greys to match the sprite. Its design is checked automatically on every rebuild: 22 checks cover interference with the populated board, LED alignment with the windows (within 0.005 mm), screw clearance, battery fit and openings. The firmware's compass maths has unit tests that run on a PC.

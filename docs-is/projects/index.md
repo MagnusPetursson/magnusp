@@ -7,7 +7,7 @@ hide:
 
 # Verkefni
 
-Hér eru nokkur vélbúnaðar- og hugbúnaðarverkefni sem ég hef hannað og smíðað. Á hverri verkefnasíðu segi ég frá hugmyndinni, hvernig hún er útfærð og stöðu verkefnisins.
+Hér eru nokkur vélbúnaðar- og hugbúnaðarverkefni sem ég hef hannað og smíðað. Á hverri verkefnasíðu segi ég frá hugmyndinni og hvernig hún er útfærð.
 
 <div class="mp-feature" markdown>
 <figure>
@@ -19,7 +19,7 @@ Hér eru nokkur vélbúnaðar- og hugbúnaðarverkefni sem ég hef hannað og sm
 
 Áttavitinn úr Minecraft, smíðaður í vasastærð. Hann vísar á vistaðan stað eða sams konar tæki sem hann er í LoRa-sambandi við.
 
-<p class="mp-tools">Vélbúnaður, í þróun</p>
+<p class="mp-tools">Vélbúnaður</p>
 
 [Lesa um McCompass](mccompass.md)
 

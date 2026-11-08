@@ -12,7 +12,7 @@ hide:
 <dl class="mp-facts">
   <dt>Verkefnið</dt><dd>Tveir eins áttavitar í vasastærð, 70 × 60 × 18 mm</dd>
   <dt>Samstarf</dt><dd>Hannað og smíðað með <a href="https://kristofer.is">Kristófer</a></dd>
-  <dt>Staða</dt><dd>PCB fyrir útgáfu 2 pöntuð í september 2026; beðið eftir afhendingu</dd>
+  <dt>Útgáfa</dt><dd>2, með GNSS, LoRa og stefnuskynjara</dd>
   <dt>Verkfæri</dt><dd>KiCad, FreeCAD, Freerouting, PlatformIO, Bambu Studio</dd>
   <dt>Íhlutir</dt><dd>Seeed XIAO ESP32-S3, 46 × WS2812B-2020, u-blox MAX-M10S GNSS, SX1262 LoRa, LSM303AGR</dd>
 </dl>
@@ -69,10 +69,4 @@ Fjögurra laga PCB er hannað fyrir sjálfvirka íhlutasetningu, þar sem verksm
 
 Hulstrið er úr tveimur þrívíddarprentuðum hlutum sem eru festir saman með M2-skrúfum og heat-set inserts úr messing. Ramminn um skífuna er prentaður í fjórum möttum gráum tónum til að líkjast myndinni úr leiknum.
 
-Í hvert sinn sem líkanið er búið til að nýju eru keyrðar 22 sjálfvirkar prófanir. Þær ná yfir bil við PCB með öllum íhlutum, staðsetningu LED-ljósa miðað við gluggana (innan 0,005 mm skekkjumarka) og rými fyrir skrúfur, rafhlöðu og op. Útreikningar áttavitans í firmware eru sannreyndir með unit tests sem keyra á tölvu áður en vélbúnaðurinn er til staðar.
-
-## Næstu skref
-
-Þegar PCB koma verða fyrstu tækin sett saman. Síðan verður prentað prufustykki til að stilla ljósdreifinguna í skífunni, firmware skrifað á grunni MeshCore og farið í göngu til að prófa drægni, GPS-staðsetningu, stefnunákvæmni og rafhlöðuendingu.
-
-Frumkóðinn er ekki opinber enn.
+Í hvert sinn sem líkanið er búið til að nýju eru keyrðar 22 sjálfvirkar prófanir. Þær ná yfir bil við PCB með öllum íhlutum, staðsetningu LED-ljósa miðað við gluggana (innan 0,005 mm skekkjumarka) og rými fyrir skrúfur, rafhlöðu og op. Útreikningar áttavitans í firmware eru sannreyndir með unit tests sem keyra á tölvu.

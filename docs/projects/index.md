@@ -7,7 +7,7 @@ hide:
 
 # Projects
 
-Things I've designed and built: hardware and software. Each page covers what it is, how it works and where it stands.
+Things I've designed and built: hardware and software. Each page covers what it is and how it works.
 
 <div class="mp-feature" markdown>
 <figure>
@@ -19,7 +19,7 @@ Things I've designed and built: hardware and software. Each page covers what it 
 
 A pocket-sized, real-life Minecraft compass that points at a saved spot or at its twin over LoRa radio.
 
-<p class="mp-tools">Hardware, in progress</p>
+<p class="mp-tools">Hardware</p>
 
 [Read about McCompass](mccompass.md)
 
