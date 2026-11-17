@@ -30,6 +30,7 @@ hide:
 <li><a href="#sandbox-og-docker">Sandbox og Docker</a></li>
 <li><a href="#hvernig-vinnur-madur-med-agent">Hvernig vinnur maður með agent?</a></li>
 <li><a href="#hvad-er-i-bodi">Hvað er í boði?</a></li>
+<li><a href="#ekki-alltaf-eins">Gervigreind og gervigreind eru ekki alltaf eins</a></li>
 <li><a href="#hvar-byrja-eg">Hvar byrja ég og hvað kostar það?</a></li>
 <li><a href="#gott-prompt">Hvernig skrifa ég gott prompt?</a></li>
 <li><a href="#bara-ad-bulla">Hvernig veit ég hvort hann sé bara að bulla?</a></li>
@@ -133,6 +134,23 @@ Byrjið í afmörkuðu umhverfi: ein mappa, engar persónuupplýsingar, engin ad
 <tr><th scope="row">Local módel <span class="mp-vendor">(<a href="https://ollama.com">Ollama</a>, <a href="https://lmstudio.ai">LM Studio</a>)</span></th><td>Gögnin fara aldrei af tölvunni. Ókeypis en töluvert slakari.</td></tr>
 </tbody>
 </table>
+
+</section>
+
+<section class="mp-q" markdown>
+
+## Gervigreind og gervigreind eru ekki alltaf eins {#ekki-alltaf-eins}
+
+Hver framleiðandi býður upp á nokkur módel. Skiptast sirka í tvennt: Stór, hæg og dýr. Lítil, hröð og ódýr.
+
+<dl class="mp-terms">
+<div><dt>Dæmi</dt><dd>Claude Opus, Sonnet og Haiku.<br>Gemini Pro og Flash.<br>GPT Astra, Sol, Terra og Luna.</dd></div>
+<div><dt>"Thinking"</dt><dd>Mörg módel geta hugsað lengur áður en þau svara. Betra í flókin verkefni.</dd></div>
+</dl>
+
+Ókeypis áskriftir fá oftast minni og mikið takmarkaðri módel.
+
+Fyrir agent-a skiptir þetta miklu máli. Lítið módel á frekar til að mistakast eða jafnvel gefast upp í lengri verkefnum.
 
 </section>
 
