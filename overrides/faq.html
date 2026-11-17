@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+{% block extrahead %}
+  {{ super() }}
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    .mp-faq { max-width: 42rem; margin-inline: auto; width: 100%; }
+    .mp-faq .headerlink { display: none; }
+    .mp-faq small { font-size: 0.82em; color: var(--mp-ink-soft); }
+  </style>
+{% endblock %}
+{% block container %}
+  <div class="md-content mp-faq" data-md-component="content">
+    <article class="md-content__inner md-typeset" lang="is">
+      {{ page.content }}
+    </article>
+  </div>
+{% endblock %}

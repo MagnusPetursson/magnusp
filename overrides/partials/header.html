@@ -18,7 +18,7 @@
       {% endfor %}
     </ul>
     <div class="mp-header__tools">
-      {% for alt in config.extra.alternate if alt.lang != config.theme.language %}
+      {% for alt in config.extra.alternate if alt.lang != config.theme.language and not (page and page.meta and page.meta.single_language | default(false)) %}
         <a class="mp-lang" href="{{ alt.link }}{{ page.url if page else '' }}" hreflang="{{ alt.lang }}" lang="{{ alt.lang }}"><span class="mp-lang__long">{{ alt.name }}</span><span class="mp-lang__short" aria-hidden="true">{{ alt.lang | upper }}</span></a>
       {% endfor %}
       {% if config.theme.palette and not config.theme.palette is mapping %}
