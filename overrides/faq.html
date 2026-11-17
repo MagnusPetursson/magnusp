@@ -178,9 +178,35 @@
     .md-typeset .mp-table--tools tbody th { width: 34%; }
     .md-typeset .mp-vendor { display: block; font-weight: 400; color: var(--mp-ink-soft); font-size: 0.92em; }
 
-    /* Architecture diagram */
-    .md-typeset .mp-diagram { margin: 1.6rem 0 0; }
-    [data-md-color-scheme="slate"] .md-typeset .mp-diagram img { filter: brightness(0.86); }
+    .md-typeset .mp-table--tools tbody th a { color: inherit; text-decoration: underline; text-decoration-color: var(--mp-ink-soft); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+    .md-typeset .mp-table--tools tbody th a:hover,
+    .md-typeset .mp-table--tools tbody th a:focus { color: var(--mp-mask); text-decoration-color: currentColor; }
+
+    /* One picture per way of working: same width and 16:10 frame; click opens the full image. */
+    .md-typeset .mp-shot { margin: 0.7rem 0 0.1rem; max-width: 19rem; }
+    .md-typeset .mp-shot a { display: block; line-height: 0; }
+    .md-typeset .mp-shot img,
+    .md-typeset .mp-shot picture { display: block; }
+    .md-typeset .mp-shot img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: contain;
+      background: var(--mp-plate);
+      border: 1px solid var(--mp-rule);
+      border-radius: var(--mp-radius);
+    }
+    .md-typeset .mp-shot a:hover img,
+    .md-typeset .mp-shot a:focus img { border-color: var(--mp-ink-soft); }
+    [data-md-color-scheme="slate"] .md-typeset .mp-shot--diagram img { filter: brightness(0.86); }
+    .md-typeset .mp-shot figcaption {
+      margin: 0.3rem 0 0;
+      max-width: none;
+      font-size: 0.64rem;
+      line-height: 1.4;
+      text-align: left;
+      color: var(--mp-ink-soft);
+    }
     .md-typeset .mp-prompt .md-code__button,
     .md-typeset .mp-prompt .md-clipboard { color: var(--mp-ink-soft); }
 
@@ -211,8 +237,10 @@
       .md-typeset .mp-q ul li { margin-left: 0.9rem; }
       .md-typeset .mp-pair > div { padding: 0.6rem 0.8rem; }
       .md-typeset .mp-prompt pre > code { font-size: 0.68rem; padding: 0.8rem 2.2rem 0.8rem 0.8rem; }
+      .md-typeset .mp-shot { max-width: none; margin-top: 0.6rem; }
       /* Phones get the stacked version of the diagram (see the picture element). */
-      .md-typeset .mp-diagram { max-width: 20rem; margin-inline: auto; }
+      .md-typeset .mp-shot--diagram { max-width: 20rem; }
+      .md-typeset .mp-shot--diagram img { aspect-ratio: auto; }
       .md-typeset .mp-pair { grid-template-columns: 1fr; }
 
       /* Tables stack: each row becomes a short block. */

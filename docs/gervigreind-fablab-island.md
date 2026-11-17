@@ -92,17 +92,14 @@ Byrjið í afmörkuðu umhverfi: ein mappa, engar persónuupplýsingar, engin ad
 <table class="mp-table mp-table--ways">
 <thead><tr><th scope="col">Leið</th><th scope="col">Dæmi</th><th scope="col">Athugasemd</th></tr></thead>
 <tbody>
-<tr><th scope="row">Forrit</th><td>Claude Desktop (með Claude Code) eða Codex appið.</td><td>Auðveldasta byrjunin.</td></tr>
-<tr><th scope="row">Í IDE</th><td>VS Code með Claude Code eða Codex viðbót, Cursor, Google Antigravity.</td><td></td></tr>
-<tr><th scope="row">Í terminal (CLI)</th><td>Claude Code, Codex CLI.</td><td>Öflugast en tæknilegast.</td></tr>
-<tr><th scope="row">Í skýinu</th><td>Codex cloud, Claude Code á vefnum.</td><td>Vinnur á afriti hjá þeim, ekki á tölvunni ykkar.</td></tr>
-<tr><th scope="row">Í gegnum spjallforrit</th><td>Hermes á t.d. Discord</td><td>(Ég nota þetta mikið)</td></tr>
+<tr><th scope="row">Forrit</th><td>Claude Desktop (með Claude Code) eða Codex appið.<figure class="mp-shot"><a href="images/faq/forrit-codex-app.webp"><img src="images/faq/forrit-codex-app-litil.webp" width="720" height="450" loading="lazy" alt="Skjámynd af Codex appinu: verkefnalisti til vinstri og samtal við agentinn til hægri."></a><figcaption>Mynd: OpenAI</figcaption></figure></td><td>Auðveldasta byrjunin.</td></tr>
+<tr><th scope="row">Í IDE</th><td>VS Code með Claude Code eða Codex viðbót, Cursor, Google Antigravity.<figure class="mp-shot"><a href="images/faq/ide-vscode-claude-code.webp"><img src="images/faq/ide-vscode-claude-code-litil.webp" width="720" height="450" loading="lazy" alt="Skjámynd af VS Code með Claude Code viðbótinni: kóði í miðjunni og samtal við Claude Code til hægri."></a><figcaption>Mynd: Anthropic</figcaption></figure></td><td></td></tr>
+<tr><th scope="row">Í terminal (CLI)</th><td>Claude Code, Codex CLI.<figure class="mp-shot"><a href="images/faq/terminal-claude-code.webp"><img src="images/faq/terminal-claude-code-litil.webp" width="720" height="450" loading="lazy" alt="Skjámynd af Claude Code í terminal: spurt hvað sé í möppunni og agentinn lýsir skránum þremur."></a></figure></td><td>Öflugast en tæknilegast.</td></tr>
+<tr><th scope="row">Í skýinu</th><td>Codex cloud, Claude Code á vefnum.<figure class="mp-shot"><a href="images/faq/sky-codex-cloud.webp"><img src="images/faq/sky-codex-cloud-litil.webp" width="720" height="450" loading="lazy" alt="Skjámynd af Codex í vafra: fyrri verkefni til vinstri og reitur fyrir nýtt verkefni í miðjunni."></a><figcaption>Mynd: OpenAI</figcaption></figure></td><td>Vinnur á afriti hjá þeim, ekki á tölvunni ykkar.</td></tr>
+<tr><th scope="row">Í gegnum spjallforrit</th><td>Hermes á t.d. Discord<figure class="mp-shot mp-shot--diagram"><a href="images/agent-uppsetning.svg"><picture><source media="(max-width: 37.5em)" srcset="images/agent-uppsetning-lodrett.svg" width="900" height="1470"><img src="images/agent-uppsetning.svg" width="1600" height="740" loading="lazy" alt="Skýringarmynd: Magnús talar við Hermes í gegnum Discord. Hermes keyrir á server tölvu og tengist Metis á fartölvu og Talos á borðtölvu. Þær nota Claude og ChatGPT."></picture></a></figure></td><td>(Ég nota þetta mikið)</td></tr>
 </tbody>
 </table>
 
-<figure class="mp-diagram">
-<picture><source media="(max-width: 37.5em)" srcset="images/agent-uppsetning-lodrett.svg" width="900" height="1470"><img src="images/agent-uppsetning.svg" width="1600" height="740" alt="Skýringarmynd: Magnús talar við Hermes í gegnum Discord. Hermes keyrir á server tölvu og tengist Metis á fartölvu og Talos á borðtölvu. Þær nota Claude og ChatGPT."></picture>
-</figure>
 
 </section>
 
@@ -113,12 +110,12 @@ Byrjið í afmörkuðu umhverfi: ein mappa, engar persónuupplýsingar, engin ad
 <table class="mp-table mp-table--tools">
 <thead><tr><th scope="col">Agent</th><th scope="col">Styrkleikar og veikleikar</th></tr></thead>
 <tbody>
-<tr><th scope="row">Claude Code <span class="mp-vendor">(Anthropic)</span></th><td>Sterkt í kóða og löngum, vönduðum verkefnum. Góð stjórn á heimildum.</td></tr>
-<tr><th scope="row">Codex <span class="mp-vendor">(OpenAI)</span></th><td>Innifalið í ChatGPT Plus. Keyrir í sandbox sjálfgefið. Þægilegra viðmót en ekki jafn góður forritari.</td></tr>
-<tr><th scope="row">Gemini / Antigravity <span class="mp-vendor">(Google)</span></th><td>Stórt context og ódýr byrjun. Ekki jafn fínpússuð upplifun.</td></tr>
-<tr><th scope="row">GitHub Copilot</th><td>Fyrir forritara inni í IDE. Ekki það sama og Microsoft Copilot.</td></tr>
-<tr><th scope="row">Hermes og annað open source</th><td>Full stjórn og hvaða módel sem er. Þið keyrið þetta sjálf. Bleeding edge.</td></tr>
-<tr><th scope="row">Local módel <span class="mp-vendor">(Ollama, LM Studio)</span></th><td>Gögnin fara aldrei af tölvunni. Ókeypis en töluvert slakari.</td></tr>
+<tr><th scope="row"><a href="https://claude.com/product/claude-code">Claude Code</a> <span class="mp-vendor">(Anthropic)</span></th><td>Sterkt í kóða og löngum, vönduðum verkefnum. Góð stjórn á heimildum.</td></tr>
+<tr><th scope="row"><a href="https://openai.com/codex/">Codex</a> <span class="mp-vendor">(OpenAI)</span></th><td>Innifalið í ChatGPT Plus. Keyrir í sandbox sjálfgefið. Þægilegra viðmót en ekki jafn góður forritari.</td></tr>
+<tr><th scope="row">Gemini / <a href="https://antigravity.google/">Antigravity</a> <span class="mp-vendor">(Google)</span></th><td>Stórt context og ódýr byrjun. Ekki jafn fínpússuð upplifun.</td></tr>
+<tr><th scope="row"><a href="https://github.com/features/copilot">GitHub Copilot</a></th><td>Fyrir forritara inni í IDE. Ekki það sama og Microsoft Copilot.</td></tr>
+<tr><th scope="row"><a href="https://github.com/NousResearch/hermes-agent">Hermes</a> og annað open source</th><td>Full stjórn og hvaða módel sem er. Þið keyrið þetta sjálf. Bleeding edge.</td></tr>
+<tr><th scope="row">Local módel <span class="mp-vendor">(<a href="https://ollama.com">Ollama</a>, <a href="https://lmstudio.ai">LM Studio</a>)</span></th><td>Gögnin fara aldrei af tölvunni. Ókeypis en töluvert slakari.</td></tr>
 </tbody>
 </table>
 
