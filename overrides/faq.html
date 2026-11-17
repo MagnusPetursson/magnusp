@@ -1,11 +1,236 @@
 {% extends "main.html" %}
+{% block htmltitle %}
+  <title>{{ page.meta.html_title if page.meta and page.meta.html_title else page.title }}</title>
+{% endblock %}
 {% block extrahead %}
   {{ super() }}
   <meta name="robots" content="noindex, nofollow">
   <style>
-    .mp-faq { max-width: 42rem; margin-inline: auto; width: 100%; }
+    /* Handout layout for a single talk page: title block, jump list, one card per question. */
+    .mp-header__tools { margin-left: auto; }
+
+    .mp-faq { max-width: 46rem; margin-inline: auto; width: 100%; }
+    .mp-faq .md-content__inner { margin-top: 2.2rem; padding-bottom: 4rem; }
     .mp-faq .headerlink { display: none; }
-    .mp-faq small { font-size: 0.82em; color: var(--mp-ink-soft); }
+    .mp-faq .md-typeset { counter-reset: q; }
+
+    /* Title block */
+    .md-typeset .mp-faq-head { padding: 0 0 1.2rem; }
+    .md-typeset .mp-faq-head h1 { margin: 0; max-width: none; font-size: 2.5rem; }
+    .md-typeset .mp-faq-head .mp-faq-meta {
+      font-family: var(--mp-display);
+      font-size: 0.82rem;
+      color: var(--mp-ink-soft);
+      margin: 0.45rem 0 0;
+      letter-spacing: 0.01em;
+    }
+
+    /* Jump list */
+    .md-typeset .mp-faq-toc {
+      border-top: 1px solid var(--mp-rule);
+      border-bottom: 1px solid var(--mp-rule);
+      padding: 1rem 0;
+      margin: 0 0 2.4rem;
+    }
+    .md-typeset .mp-faq-toc ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      columns: 2;
+      column-gap: 2rem;
+      counter-reset: toc;
+    }
+    .md-typeset .mp-faq-toc li {
+      counter-increment: toc;
+      break-inside: avoid;
+      margin: 0;
+      padding: 0.22rem 0 0.22rem 1.6em;
+      position: relative;
+      font-family: var(--mp-display);
+      font-size: 0.8rem;
+      line-height: 1.35;
+    }
+    .md-typeset .mp-faq-toc li::before {
+      content: counter(toc);
+      position: absolute;
+      left: 0;
+      width: 1em;
+      text-align: right;
+      color: var(--mp-ink-soft);
+      font-variant-numeric: tabular-nums;
+    }
+    .md-typeset .mp-faq-toc a { text-decoration: none; color: var(--mp-ink); }
+    .md-typeset .mp-faq-toc a:hover,
+    .md-typeset .mp-faq-toc a:focus { color: var(--mp-mask); text-decoration: underline; }
+
+    /* One card per question */
+    .md-typeset .mp-q {
+      counter-increment: q;
+      background: var(--mp-plate);
+      border: 1px solid var(--mp-rule);
+      border-radius: var(--mp-radius);
+      padding: 1.5rem 1.8rem 1.6rem;
+      margin: 0 0 1.2rem;
+    }
+    .md-typeset .mp-q > :last-child { margin-bottom: 0; }
+    .md-typeset .mp-q h2 {
+      margin: 0 0 0.9rem;
+      scroll-margin-top: 4.5rem;
+      font-size: 1.4rem;
+    }
+    .md-typeset .mp-q h2::before {
+      content: counter(q);
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--mp-mask);
+      margin-bottom: 0.1rem;
+      font-variant-numeric: tabular-nums;
+    }
+    .md-typeset .mp-q p,
+    .md-typeset .mp-q ul { max-width: var(--mp-measure); }
+    .md-typeset .mp-q ul { margin: 0.6rem 0 0.6rem 1.1rem; }
+    .md-typeset .mp-q ul li { margin: 0 0 0.35rem 1rem; }
+    .md-typeset .mp-q ul li::marker { color: var(--mp-ink-soft); }
+
+    .md-typeset .mp-note {
+      border-left: 2px solid var(--mp-mask);
+      padding: 0.1rem 0 0.1rem 0.9rem;
+      margin: 1rem 0;
+    }
+    .md-typeset .mp-aside {
+      font-size: 0.8rem;
+      color: var(--mp-ink-soft);
+      margin: 0.8rem 0 0;
+    }
+
+    /* Chat vs agent */
+    .mp-faq .md-typeset dl.mp-pair {
+      max-width: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin: 1.1rem 0 0;
+    }
+    .md-typeset .mp-pair > div {
+      border: 1px solid var(--mp-rule);
+      border-radius: var(--mp-radius);
+      padding: 0.8rem 1rem;
+      background: var(--mp-paper);
+    }
+    .mp-faq .md-typeset dl.mp-pair dt {
+      font-family: var(--mp-display);
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--mp-mask);
+      margin: 0 0 0.2rem;
+    }
+    .mp-faq .md-typeset dl.mp-pair dd,
+    .mp-faq .md-typeset dl.mp-terms dd { margin: 0; color: var(--mp-ink); }
+
+    /* Term list */
+    .md-typeset .mp-terms { margin: 1rem 0 0; max-width: var(--mp-measure); }
+    .md-typeset .mp-terms > div { padding: 0.75rem 0; border-top: 1px solid var(--mp-rule); }
+    .md-typeset .mp-terms > div:last-child { padding-bottom: 0; }
+    .mp-faq .md-typeset dl.mp-terms dt {
+      font-family: var(--mp-display);
+      font-weight: 600;
+      margin: 0 0 0.15rem;
+    }
+
+    /* Tables */
+    .md-typeset table.mp-table {
+      display: table;
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin: 0.4rem 0 0;
+      background: transparent;
+    }
+    .md-typeset table.mp-table th,
+    .md-typeset table.mp-table td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.65rem 1.2rem 0.65rem 0;
+      border-top: 1px solid var(--mp-rule);
+    }
+    .md-typeset table.mp-table tr > :last-child { padding-right: 0; }
+    .md-typeset table.mp-table thead th {
+      font-family: var(--mp-display);
+      font-weight: 600;
+      font-size: 0.72rem;
+      color: var(--mp-ink);
+      border-top: 0;
+      border-bottom: 1px solid var(--mp-ink-soft);
+      padding-top: 0;
+      padding-bottom: 0.45rem;
+    }
+    .md-typeset table.mp-table tbody tr:first-child > * { border-top: 0; }
+    .md-typeset table.mp-table tbody th {
+      font-family: var(--mp-display);
+      font-weight: 600;
+      color: var(--mp-ink);
+    }
+    .md-typeset .mp-table--ways tbody th { width: 25%; }
+    .md-typeset .mp-table--ways td:last-child { width: 30%; color: var(--mp-ink-soft); }
+    .md-typeset .mp-table--tools tbody th { width: 34%; }
+    .md-typeset .mp-vendor { display: block; font-weight: 400; color: var(--mp-ink-soft); font-size: 0.92em; }
+
+    /* Architecture diagram */
+    .md-typeset .mp-diagram { margin: 1.6rem 0 0; }
+    [data-md-color-scheme="slate"] .md-typeset .mp-diagram img { filter: brightness(0.86); }
+    .md-typeset .mp-prompt .md-code__button,
+    .md-typeset .mp-prompt .md-clipboard { color: var(--mp-ink-soft); }
+
+    /* Prompt */
+    .md-typeset .mp-prompt-label { margin: 1.4rem 0 0.5rem; }
+    .md-typeset .mp-prompt pre > code {
+      white-space: pre-wrap;
+      word-break: normal;
+      overflow-wrap: anywhere;
+      font-size: 0.74rem;
+      line-height: 1.6;
+      padding: 1rem 2.6rem 1rem 1rem;
+      background: var(--mp-paper);
+    }
+
+    @media screen and (max-width: 44.9375em) {
+      .md-typeset .mp-faq-toc ol { columns: 1; }
+      .md-typeset .mp-faq-head h1 { font-size: 2rem; }
+    }
+
+    @media screen and (max-width: 37.5em) {
+      .mp-faq .md-content__inner { margin: 0.4rem 0.8rem 0; }
+      .md-typeset .mp-faq-head { padding-bottom: 1rem; }
+      .md-typeset .mp-faq-toc { margin-bottom: 1.6rem; }
+      .md-typeset .mp-q { padding: 1.15rem 1rem 1.25rem; }
+      .md-typeset .mp-q h2 { font-size: 1.2rem; }
+      .md-typeset .mp-q ul { margin-left: 0.4rem; }
+      .md-typeset .mp-q ul li { margin-left: 0.9rem; }
+      .md-typeset .mp-pair > div { padding: 0.6rem 0.8rem; }
+      .md-typeset .mp-prompt pre > code { font-size: 0.68rem; padding: 0.8rem 2.2rem 0.8rem 0.8rem; }
+      /* Phones get the stacked version of the diagram (see the picture element). */
+      .md-typeset .mp-diagram { max-width: 20rem; margin-inline: auto; }
+      .md-typeset .mp-pair { grid-template-columns: 1fr; }
+
+      /* Tables stack: each row becomes a short block. */
+      .md-typeset table.mp-table,
+      .md-typeset table.mp-table tbody,
+      .md-typeset table.mp-table tr,
+      .md-typeset table.mp-table th,
+      .md-typeset table.mp-table td { display: block; width: auto !important; }
+      .md-typeset table.mp-table thead { display: none; }
+      .md-typeset table.mp-table tr { border-top: 1px solid var(--mp-rule); padding: 0.7rem 0; }
+      .md-typeset table.mp-table tbody tr:first-child { border-top: 0; padding-top: 0.2rem; }
+      .md-typeset table.mp-table th,
+      .md-typeset table.mp-table td { border: 0; padding: 0; }
+      .md-typeset table.mp-table tbody th { margin-bottom: 0.2rem; }
+      .md-typeset table.mp-table td:empty { display: none; }
+      .md-typeset .mp-table--ways td:last-child { margin-top: 0.2rem; }
+      .md-typeset .mp-vendor { display: inline; }
+    }
   </style>
 {% endblock %}
 {% block container %}

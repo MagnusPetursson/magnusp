@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1470" viewBox="0 0 900 1470" role="img" aria-label="Magnús → Discord → Hermes. Hermes, Metis og Talos tengjast innbyrðis og nota Claude og ChatGPT.">
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" overflow="visible">
+      <path d="M 2 1 L 10 6 L 2 11" fill="none" stroke="#1C2420" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="900" height="1470" fill="#fff"/>
+  <g fill="none" stroke="#1C2420" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path id="computer-group" d="M 475 380 H 808 Q 840 380 840 412 V 1148 Q 840 1180 808 1180 H 92 Q 60 1180 60 1148 V 412 Q 60 380 92 380 H 425"/>
+    <rect x="330" y="30" width="240" height="110"/>
+    <rect x="330" y="210" width="240" height="110"/>
+    <rect x="300" y="420" width="300" height="200"/>
+    <rect x="100" y="860" width="300" height="200"/>
+    <rect x="500" y="860" width="300" height="200"/>
+    <rect x="330" y="1270" width="240" height="170"/>
+    <line x1="450" y1="150" x2="450" y2="200" marker-end="url(#arrow)"/>
+    <line x1="450" y1="330" x2="450" y2="410" marker-end="url(#arrow)"/>
+    <line x1="385" y1="630" x2="290" y2="850" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line x1="515" y1="630" x2="610" y2="850" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line x1="410" y1="960" x2="490" y2="960" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line x1="450" y1="1190" x2="450" y2="1260" marker-end="url(#arrow)"/>
+  </g>
+  <g fill="#1C2420" font-family="system-ui, -apple-system, Segoe UI, Roboto, DejaVu Sans, Arial, sans-serif" text-anchor="middle">
+    <g font-size="44">
+      <text x="450" y="100">Magnús</text>
+      <text x="450" y="280">Discord</text>
+      <text x="450" y="1342">Claude</text>
+      <text x="450" y="1402">ChatGPT</text>
+    </g>
+    <g font-size="34">
+      <text x="450" y="502">Server tölva</text>
+      <text x="250" y="942">Fartölva</text>
+      <text x="650" y="942">Borðtölva</text>
+    </g>
+    <g font-size="54" font-weight="700">
+      <text x="450" y="572">Hermes</text>
+      <text x="250" y="1012">Metis</text>
+      <text x="650" y="1012">Talos</text>
+    </g>
+  </g>
+</svg>

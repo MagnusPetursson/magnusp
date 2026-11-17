@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="740" viewBox="0 80 1600 740" role="img" aria-label="Magnús → Discord → Hermes. Hermes, Metis og Talos tengjast innbyrðis og nota Claude og ChatGPT.">
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto-start-reverse" overflow="visible">
+      <path d="M 2 1 L 10 6 L 2 11" fill="none" stroke="#1C2420" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect x="0" y="80" width="1600" height="740" fill="#fff"/>
+
+  <!-- The ingress opening keeps the Discord arrow clear of the frame. -->
+  <g fill="none" stroke="#1C2420" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path id="computer-group" d="M 570 430 V 152 Q 570 120 602 120 H 1228 Q 1260 120 1260 152 V 748 Q 1260 780 1228 780 H 602 Q 570 780 570 748 V 470"/>
+
+    <rect id="magnus" x="40" y="390" width="200" height="120"/>
+    <rect id="discord" x="310" y="390" width="200" height="120"/>
+    <rect id="hermes" x="610" y="360" width="240" height="180"/>
+    <rect id="metis" x="980" y="160" width="240" height="180"/>
+    <rect id="talos" x="980" y="560" width="240" height="180"/>
+    <rect id="models" x="1340" y="360" width="220" height="180"/>
+
+    <line id="magnus-discord" x1="250" y1="450" x2="300" y2="450" marker-end="url(#arrow)"/>
+    <line id="discord-hermes" x1="520" y1="450" x2="600" y2="450" marker-end="url(#arrow)"/>
+
+    <line id="hermes-metis" x1="860" y1="380" x2="970" y2="320" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line id="hermes-talos" x1="860" y1="520" x2="970" y2="580" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+    <line id="metis-talos" x1="1100" y1="350" x2="1100" y2="550" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+
+    <line id="group-models" x1="1260" y1="450" x2="1330" y2="450" marker-end="url(#arrow)"/>
+  </g>
+
+  <g fill="#1C2420" font-family="system-ui, -apple-system, Segoe UI, Roboto, DejaVu Sans, Arial, sans-serif" text-anchor="middle">
+    <g font-size="40">
+      <text x="140" y="464">Magnús</text>
+      <text x="410" y="464">Discord</text>
+      <text x="1450" y="431">Claude</text>
+      <text x="1450" y="489">ChatGPT</text>
+    </g>
+    <g font-size="32">
+      <text x="730" y="420">Server tölva</text>
+      <text x="1100" y="220">Fartölva</text>
+      <text x="1100" y="620">Borðtölva</text>
+    </g>
+    <g font-size="50" font-weight="700">
+      <text x="730" y="484">Hermes</text>
+      <text x="1100" y="284">Metis</text>
+      <text x="1100" y="684">Talos</text>
+    </g>
+  </g>
+</svg>
