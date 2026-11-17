@@ -27,6 +27,7 @@ hide:
 <li><a href="#hvad-getur-agent-gert">Hvað getur agent gert?</a></li>
 <li><a href="#tengingar-mcp">Tengingar (MCP)</a></li>
 <li><a href="#oryggi-og-gogn">Öryggi og gögn</a></li>
+<li><a href="#sandbox-og-docker">Sandbox og Docker</a></li>
 <li><a href="#hvernig-vinnur-madur-med-agent">Hvernig vinnur maður með agent?</a></li>
 <li><a href="#hvad-er-i-bodi">Hvað er í boði?</a></li>
 <li><a href="#hvar-byrja-eg">Hvar byrja ég og hvað kostar það?</a></li>
@@ -81,6 +82,20 @@ Byrjið í afmörkuðu umhverfi: ein mappa, engar persónuupplýsingar, engin ad
 <div><dt>Permission modes</dt><dd>Agentinn spyr áður en hann framkvæmir (Claude Code: Manual eða Plan. Codex: Approval). Aldrei byrja í "skip permissions".</dd></div>
 <div><dt>Prompt injection</dt><dd>Tölvupóstur eða vefsíða getur haft faldar skipanir sem agentinn hlýðir. Þess vegna skiptir máli hvað þið tengið hann við.</dd></div>
 <div><dt>Þjálfun</dt><dd>ChatGPT og Gemini á persónulegum áskriftum þjálfa á gögnunum ykkar nema þið slökkvið á því. Claude spyr. Vinnu- og skólaáskriftir þjálfa ekki.</dd></div>
+</dl>
+
+</section>
+
+<section class="mp-q" markdown>
+
+## Sandbox og Docker {#sandbox-og-docker}
+
+Því meiri einangrun, því meira frelsi má gefa agentinum.
+
+<dl class="mp-terms">
+<div><dt>Sandbox</dt><dd>Agentinn kemst bara í eina möppu og fer ekki á netið nema þið leyfið það. Codex gerir þetta sjálfgefið. Í Claude Code kveikið þið á því með /sandbox.</dd></div>
+<div><dt>Sér notandi eða virtual machine</dt><dd>Agentinn fær sinn eigin aðgang að tölvunni, án ykkar skjala og innskráninga.</dd></div>
+<div><dt>Docker</dt><dd>Agentinn keyrir í container sem er einangraður frá restinni af tölvunni. Þá má leyfa honum meira án þess að hann snerti annað. VS Code Dev Containers einfalda þetta. Á Windows og Mac þarf Docker Desktop.</dd></div>
 </dl>
 
 </section>
