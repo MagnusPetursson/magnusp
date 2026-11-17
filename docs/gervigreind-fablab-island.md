@@ -24,6 +24,7 @@ hide:
 <nav class="mp-faq-toc" aria-label="Spurningar">
 <ol>
 <li><a href="#hvad-er-agent">Hvað er agent?</a></li>
+<li><a href="#chat-agent-myndgerd">Chat, agent og myndgerð</a></li>
 <li><a href="#hvad-getur-agent-gert">Hvað getur agent gert?</a></li>
 <li><a href="#tengingar-mcp">Tengingar (MCP)</a></li>
 <li><a href="#oryggi-og-gogn">Öryggi og gögn</a></li>
@@ -43,9 +44,16 @@ hide:
 
 Gervigreind sem getur framkvæmt, ekki bara svarað. Hún fær tól (skrár, skipanir, vafra), tekur skref, skoðar útkomuna og ákveður næsta skref.
 
-<dl class="mp-pair">
-<div><dt>Chat</dt><dd>Spurningar, hugmyndir, lítil uppköst.</dd></div>
-<div><dt>Agent</dt><dd>Vinnur verkefni til enda með skrám, tólum og prófunum.</dd></div>
+</section>
+
+<section class="mp-q" markdown>
+
+## Chat, agent og myndgerð {#chat-agent-myndgerd}
+
+<dl class="mp-pair mp-pair--three">
+<div><dt>Chat</dt><dd>Svarar og skrifar texta. Þið vinnið verkið sjálf.</dd></div>
+<div><dt>Agent</dt><dd>Vinnur verkið. Les og breytir skrám, keyrir skipanir og prófar útkomuna.</dd></div>
+<div><dt>Myndgerð</dt><dd>Býr til myndir. Hugsar hvorki né framkvæmir.</dd></div>
 </dl>
 
 </section>
@@ -112,7 +120,7 @@ Byrjið í afmörkuðu umhverfi: ein mappa, engar persónuupplýsingar, engin ad
 <tr><th scope="row">Í IDE</th><td>VS Code með Claude Code eða Codex viðbót, Cursor, Google Antigravity.<figure class="mp-shot"><a href="images/faq/ide-vscode-claude-code.webp"><img src="images/faq/ide-vscode-claude-code-litil.webp" width="720" height="450" loading="lazy" alt="Skjámynd af VS Code með Claude Code viðbótinni: kóði í miðjunni og samtal við Claude Code til hægri."></a><figcaption>Mynd: Anthropic</figcaption></figure></td><td></td></tr>
 <tr><th scope="row">Í terminal (CLI)</th><td>Claude Code, Codex CLI.<figure class="mp-shot"><a href="images/faq/terminal-claude-code.webp"><img src="images/faq/terminal-claude-code-litil.webp" width="720" height="450" loading="lazy" alt="Skjámynd af Claude Code í terminal: spurt hvað sé í möppunni og agentinn lýsir skránum þremur."></a></figure><figure class="mp-shot"><a href="images/faq/terminal-codex-cli.webp"><img src="images/faq/terminal-codex-cli-litil.webp" width="720" height="450" loading="lazy" alt="Skjámynd af Codex CLI í terminal: beðið um útskýringu á kóða og agentinn gerir áætlun."></a><figcaption>Mynd: OpenAI</figcaption></figure></td><td>Öflugast en tæknilegast.</td></tr>
 <tr><th scope="row">Í skýinu</th><td>Codex cloud, Claude Code á vefnum.<figure class="mp-shot"><a href="images/faq/sky-codex-cloud.webp"><img src="images/faq/sky-codex-cloud-litil.webp" width="720" height="450" loading="lazy" alt="Skjámynd af Codex í vafra: fyrri verkefni til vinstri og reitur fyrir nýtt verkefni í miðjunni."></a><figcaption>Mynd: OpenAI</figcaption></figure></td><td>Vinnur á afriti hjá þeim, ekki á tölvunni ykkar.</td></tr>
-<tr><th scope="row">Í gegnum spjallforrit</th><td>Hermes á t.d. Discord<figure class="mp-shot mp-shot--diagram"><a href="images/agent-uppsetning.svg"><picture><source media="(max-width: 37.5em)" srcset="images/agent-uppsetning-lodrett.svg" width="900" height="1470"><img src="images/agent-uppsetning.svg" width="1600" height="740" loading="lazy" alt="Skýringarmynd: Magnús talar við Hermes í gegnum Discord. Hermes keyrir á server tölvu og tengist Metis á fartölvu og Talos á borðtölvu. Þær nota Claude og ChatGPT."></picture></a></figure></td><td>(Ég nota þetta mikið)</td></tr>
+<tr><th scope="row">Í gegnum spjallforrit</th><td>Hermes á t.d. Discord<figure class="mp-shot mp-shot--diagram"><a href="images/agent-uppsetning.svg"><picture><source media="(max-width: 37.5em)" srcset="images/agent-uppsetning-lodrett.svg" width="900" height="1470"><img src="images/agent-uppsetning.svg" width="1600" height="740" loading="lazy" alt="Skýringarmynd: Magnús talar við Hermes í gegnum Discord. Hermes keyrir á server tölvu og tengist Metis á fartölvu og Talos á borðtölvu. Þær nota Claude og ChatGPT."></picture></a></figure><figure class="mp-shot"><a href="images/faq/discord-hermes.webp"><img src="images/faq/discord-hermes-litil.webp" width="720" height="502" loading="lazy" alt="Skjámynd af Discord í síma: beðið um vefsíðu með þrívíddarkorti af Íslandi og Hermes byrjar að vinna."></a></figure><figure class="mp-shot"><a href="images/faq/terminal-hermes.webp"><img src="images/faq/terminal-hermes-litil.webp" width="720" height="479" loading="lazy" alt="Skjámynd af Hermes í terminal: raðar 20 laser-skrám í möppur eftir efni og þykkt og segir hvaða skrár eru of stórar fyrir laserinn."></a></figure></td><td>(Ég nota þetta mikið)</td></tr>
 </tbody>
 </table>
 
